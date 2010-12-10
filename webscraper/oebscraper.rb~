@@ -1,0 +1,77 @@
+#!/usr/local/bin/ruby -w
+
+#require needed gems 
+require 'nokogiri'
+require 'open-uri'
+
+aFile = File.new(ARGV[0], "w")
+
+doc = Nokogiri::HTML(open(ARGV[1]))
+
+doc.css('div#double a').each do |link|
+  if link[ 'href' ] =~ /http.*/
+    url = link[ 'href' ].to_s
+  else 
+    url = "http://oeb.harvard.edu/faculty/" + link[ 'href' ].to_s
+  end
+  profile = Nokogiri::HTML(open(url))
+        facultyinfo =  profile.css('table')[1].css('td')[2]
+        aFile.syswrite(facultyinfo.to_s.gsub(/.*<!-- name -->|<!-- title -->.*/m, '"').gsub(/(<br.*?>)/, ' ').gsub(/<.*?>/, '') + ",") 
+aFile.syswrite(facultyinfo.to_s.gsub(/.*<!-- title -->|<!-- contact -->.*/m, '"').gsub(/(<br.*?>)/, ', ').gsub(/<.*?>/, '') + ",")
+	aFile.syswrite(facultyinfo.to_s.gsub(/.*<!-- contact -->|<!-- links-->.*/m, '"').gsub(/(\s)+/, ' ').gsub(/(<br.*?>)/, '","').gsub(/","Email: |Phone: |Mail: /, '').gsub(/<.*?>/, '') + ",") 
+        aFile.syswrite("\"" + profile.to_s.gsub(/.*<!-- research information -->|<!-- publications -->.*/m, '').gsub(/<.*?>/, '').gsub(/(\s)+|\n/, ' ') + "\"\n")
+      end
+  end
+end
+
+
+=begin
+tr.each do |row|
+  td = row.css('td')
+  aFile.syswrite("\""+ td[0].to_s.gsub(/<.*?>/, '').gsub(/\n/, '') + "\",")
+  aFile.syswrite(td[2].to_s.gsub(/<.*?>/, '').gsub(/office:/, '') + ", ")
+  aFile.syswrite(td[3].to_s.gsub(/<.*?>/, '').gsub(/tel:/, '') + ", ")		
+  aFile.syswrite(td[4].to_s.gsub(/<.*?>/, '').gsub(/\n/, '').gsub(/\s/, '').gsub(/email:/, '') + ".harvard.edu, ")
+  row.css('a').each do |link|
+    if link[ 'href' ] =~ /http.*/
+      aFile.syswrite(link[ 'href' ].to_s + "\n")
+      break
+    elsif link[ 'href' ] =~ /.+/
+      aFile.syswrite("http://www.math.harvard.edu/people/" + link[ 'href' ].to_s + "\n")
+      break
+    end    
+  end
+end
+=end
+
+aFile.close
+
+#tr.each do |link|
+#  td = tr.css('td')
+#  puts td[0].map { |link| link [ 'href' ] }
+#  puts td[2]
+#end
+
+
+
+#links = doc.css('td.a a').map { |link| link[ 'href' ] }
+
+#links.reject! { |url| url =~ /#[A-Z]/}
+
+#links.collect! do |url|
+#    if url =~ /http.*/
+#    	next url
+#    else
+#        next "http://www.math.harvard.edu/people/" + url.to_s
+#    end
+#end
+
+#links.each do |url|
+#    if url =~ /http:\/\/www.math.harvard.edu\/people\/.*/
+#        doc = Nokogiri::HTML(open(url))
+#        info = doc.css('ul.peoplenavlist3 li')
+#	puts info[1].to_s.gsub(, '') 
+#        puts info[2]
+#    end
+#end
+    

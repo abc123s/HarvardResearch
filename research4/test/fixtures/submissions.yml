@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  job_id: 1
+  user_id: 1
+  coverletter: MyText
+
+two:
+  job_id: 1
+  user_id: 1
+  coverletter: MyText

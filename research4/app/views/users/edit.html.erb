@@ -1,0 +1,11 @@
+<h1>Editing User</h1>
+
+
+<% if User.find(remember_token[0]).usertype == 0 %>
+<%= render 'form0' %>
+<% else %>
+<%= render 'form1' %>
+<% end %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>

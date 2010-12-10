@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Job Title:</b>
+  <%= @submission.job.title %>
+</p>
+
+<p>
+  <b>Cover letter:</b>
+  <%= @submission.coverletter %>
+</p>
+
+
+<%= link_to 'Edit', edit_submission_path(@submission) %> |
+<%= link_to 'Back', submissions_path %>
