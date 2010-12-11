@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<% if @user.usertype == 0 %>
+<%= link_to 'Job Listings', jobs_path %> |
+<%= link_to 'Edit Personal Information', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+<h1>Your Applications</h1>
+<table>
+  <tr>
+    <th>Job Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @submissions.each do |submission| %>
+<% else %>
+<%= link_to 'New Job Listing', new_job_path %>
+<h1>Your Jobs</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jobs.each do |job| %>
+  <tr>
+    <td><%= job.title %></td>
+    <td><%= link_to 'Show', job %></td>
+    <td><%= link_to 'Edit', edit_job_path(job) %></td>
+    <td><%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<% end %> 

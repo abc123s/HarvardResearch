@@ -1,0 +1,40 @@
+div#wrapper
+{
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a:link, a:active, a:visited, a:hover
+{
+  color: #000000;
+  text-decoration: none;
+}
+
+div#top
+{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div#middle
+{
+  width: 600 px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50 px;
+  background-color: red;
+}
+
+div#students
+{
+  text-align: center;
+  float: left;
+}
+
+div#professors
+{
+  text-align: center;
+  float: right;
+}

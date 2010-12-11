@@ -1,0 +1,35 @@
+<h1>Listing jobs</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Funding</th>
+    <th>Description</th>
+    <th>Duration</th>
+    <th>Position</th>
+    <th>Location</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jobs.each do |job| %>
+  <tr>
+    <td><%= job.user_id %></td>
+    <td><%= job.funding %></td>
+    <td><%= job.description %></td>
+    <td><%= job.duration %></td>
+    <td><%= job.position %></td>
+    <td><%= job.location %></td>
+    <td><%= link_to 'Show', job %></td>
+    <% if User.find(remember_token[0]).usertype == 1%>
+    <td><%= link_to 'Edit', edit_job_path(job) %></td>
+    <td><%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+ 
