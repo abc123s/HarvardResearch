@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
+<% if Users.find(remember_token[0]).usertype == 1%>
 <div style = 'float: right;'> 
+<%end%>
 <p>
   <b>Job Title:</b>
   <%= @submission.job.title %>
@@ -9,7 +11,9 @@
   <b>Cover letter:</b>
   <%= @submission.coverletter %>
 </p>
+<% if Users.find(remember_token[0]).usertype == 1%>
 </div>
+<%end%>
 <div style = 'float: left;'>
 <% if User.find(remember_token[0]).usertype == 1%>
   <h1>Student Profile</h1>
