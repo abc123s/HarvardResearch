@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
                     "Philosophy", "Physics", "Psychology", "Comparative Study of Religion",
                     "Romance Languages and Literatures", "Sanskrit and Indian Studies",
                     "Slavic Languages and Literatures", "Social Studies", "Sociology", "Special Concentration",
-                    "Statistics", "Visual and Environmental Studies", "Studies of Women, Gender, and Sexuality"]
+                    "Statistics", "Undeclared", "Visual and Environmental Studies",
+                    "Studies of Women, Gender, and Sexuality"]
   SECONDARYS = ["African and African American Studies", "Anthropology", "Archaeology", "Astrophysics",
                "Celtic Languages and Literatures", "Chemistry", "Classics", "Computer Science", "Dramatic Arts",
                "Earth and Planetary Science", "East Asian Studies", "Economics", "English",
