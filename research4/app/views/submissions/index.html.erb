@@ -1,0 +1,27 @@
+<h1>Listing submissions</h1>
+
+<table>
+  <tr>
+    <th>Job</th>
+    <th>User</th>
+    <th>Coverletter</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @submissions.each do |submission| %>
+  <tr>
+    <td><%= submission.job_id %></td>
+    <td><%= submission.user_id %></td>
+    <td><%= submission.coverletter %></td>
+    <td><%= link_to 'Show', submission %></td>
+    <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
+    <td><%= link_to 'Destroy', submission, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Submission', new_submission_path %>

@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @job.title %>
+</p>
+
+<p>
+  <b>Funding:</b>
+  <%= @job.funding %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @job.description %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%= @job.duration %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @job.position %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @job.location %>
+</p>
+<% if User.find(remember_token[0]).usertype == 0%>
+  <%= link_to 'Apply', new_submission_path + "/" + @job.id.to_s %>
+<% else %>
+  <%= link_to 'Edit', edit_job_path(@job) %> |
+  <%= link_to 'Back', user_profile_path(remember_token[0].to_s) %>
+  <h1>Applications To This Job</h1>
+  <table>
+    <tr>
+      <th>Job Title</th>
+      <th></th>
+    </tr>
+
+  <% @job.submissions.each do |submission| %>
+    <tr>
+      <td><%= submission.user.firstname %><%= submission.user.lastname %></td>
+      <td><%= link_to 'Show', submission %></td>
+    </tr>
+  <% end %>
+<% end %>

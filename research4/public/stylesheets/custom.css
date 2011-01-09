@@ -1,0 +1,82 @@
+/* CSS styling taken from Blueprint CSS library and http://railstutorial.org/chapters/filling-in-the-layout */
+
+/* Links */
+
+a {
+  color: #09c;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #069;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #069;
+}
+
+/* Navigation */
+
+nav {
+  float: center;
+  background-color: white;
+  padding: 0;
+  white-space: nowrap;
+  width: auto;
+  height: 36px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: inline
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+  width:100px;
+  background:#D0D0D0;
+  float:left;
+  text-align:center;
+  border-left:1px solid #fff;
+}
+
+nav ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+  color:#780000;
+}
+
+nav ul li a:visited {
+  color: #09c;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  background:#a2b3a1;
+  color:#000
+}
+
+/* Round corners */
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 10px;
+  width: 710px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer nav {
+  float: none;
+}
+
