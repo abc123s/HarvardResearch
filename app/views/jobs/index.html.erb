@@ -1,5 +1,11 @@
 <h1>Listing jobs</h1>
-
+<h2>Filter By </h2> 
+<%= form_tag({:controller => "jobs", :action => "index"}, :method => "get") do %>
+  <%= label_tag(:department, "Department")%>
+  <%= text_field_tag(:department) %>
+  <%= submit_tag("Filter") %>
+<% end %>
+ 
 <table>
   <tr>
     <th>Position</th>
@@ -16,17 +22,17 @@
 <% @jobs.each do |job| %>
   <tr>
     <td><%= job.position %></td>
-    <td><%= job.descrption %></td>
-    <td><%= job.user.name %></td>
+    <td><%= job.description %></td>
+    <td><%= job.user.firstname %> <%=job.user.lastname%></td>
     <td><%= job.location %></td>
     <td><%= job.duration %></td>
     <td><%= job.user.department %></td>
-    <td><%= link_to 'Show', job %></td>
+    <td><%= link_to 'Show', job %></td>   
     <% if User.find(remember_token[0]).usertype == 1%>
     <td><%= link_to 'Edit', edit_job_path(job) %></td>
     <td><%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %></td>
-    <% end %>
-  </tr>
+    <% end %> 
+   </tr> 
 <% end %>
 </table>
 

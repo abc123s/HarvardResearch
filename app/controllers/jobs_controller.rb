@@ -3,9 +3,8 @@ class JobsController < ApplicationController
   before_filter :authenticate
 
   # lists all jobs
-  def index
+  def index  
     @jobs = Job.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @jobs }
