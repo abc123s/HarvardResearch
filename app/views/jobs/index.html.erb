@@ -2,12 +2,12 @@
 
 <table>
   <tr>
-    <th>User</th>
-    <th>Funding</th>
-    <th>Description</th>
-    <th>Duration</th>
     <th>Position</th>
+    <th>Description</th>
+    <th>Professor</th>
     <th>Location</th>
+    <th>Duration</th>
+    <th>Department</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,12 +15,12 @@
 
 <% @jobs.each do |job| %>
   <tr>
-    <td><%= job.user_id %></td>
-    <td><%= job.funding %></td>
-    <td><%= job.description %></td>
-    <td><%= job.duration %></td>
     <td><%= job.position %></td>
+    <td><%= job.descrption %></td>
+    <td><%= job.user.name %></td>
     <td><%= job.location %></td>
+    <td><%= job.duration %></td>
+    <td><%= job.user.department %></td>
     <td><%= link_to 'Show', job %></td>
     <% if User.find(remember_token[0]).usertype == 1%>
     <td><%= link_to 'Edit', edit_job_path(job) %></td>
