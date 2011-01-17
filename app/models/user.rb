@@ -34,6 +34,16 @@ class User < ActiveRecord::Base
                "Romance Languages and Literatures", "Russia, Eastern Europe, and Central Asia",
                "Sanskrit and Indian Studies", "Slavic Languages and Literatures", "Sociology", "Statistics",
                "Visual and Environmental Studies", "Studies of Women, Gender, and Sexuality"]
+  DEPARTMENTS = ["African and African American Studies", "Anthropology", "Astronomy", "Celtic Languages and Literatures"
+                "Chemistry and Chemical Biology", "The Classics", "Comparative Literature",
+                "Earth and Planetary Sciences", "East Asian Languages and Civilizations", "Economics", "English",
+                "Germanic Languages and Literatures", "Government", "History", "History of Art and Architecture",
+                "History of Science", "Human Evolutionary Biology", "Linguistics", "Mathematics",
+                "Molecular and Cellular Biology", "Music", "Near Eastern Languages and Civilizations",
+                "Organismic and Evolutionary Biology", "Philosophy", "Physics", "Psychology",
+                "Romance Languages and Literatures", "Sanskrit and Indian Studies",
+                "Slavic Languages and Literatures", "Sociology", "Statistics", "Stem Cell and Regenerative Biology",
+                "Visual and Environmental Studies"]
 
   # change display names of certain variables to "humanized" versions
   HUMANIZED_ATTRIBUTES = { :email => "E-mail address", :firstname => "First name", :lastname => "Last name",

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db3b7eaa-233f-4125-90de-9109772de0ca" name="Default" comment="" />
+    <list default="true" id="db3b7eaa-233f-4125-90de-9109772de0ca" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/HarvardResearch.iml" afterPath="$PROJECT_DIR$/.idea/HarvardResearch.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_form1.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_form1.html.erb" />
+    </list>
     <ignored path="research4.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,26 +28,7 @@
   </component>
   <component name="FileColors" enabled="true" enabledForTabs="true" showNonProject="false" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="35" selection-start="5700" selection-end="5700" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="research4" pinned="false" current="true" current-in-tab="true">
-        <entry file="model://research4">
-          <provider selected="true" editor-type-id="AssociationsFileEditorProvider">
-            <state>
-              <settings isFieldsVisible="true" isMigrationFieldsVisible="true" isTypicalFieldsVisible="false" isOwnFieldsVisible="false" isHandToolMode="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -79,7 +65,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
         <option value="$PROJECT_DIR$/app/models/job.rb" />
         <option value="$PROJECT_DIR$/app/models/submission.rb" />
@@ -90,11 +75,12 @@
         <option value="$PROJECT_DIR$/app/views/users/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/public/stylesheets/custom.css" />
-        <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/profile.html.erb" />
         <option value="$PROJECT_DIR$/app/views/submissions/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/jobs/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/views/users/_form1.html.erb" />
       </list>
     </option>
   </component>
@@ -131,48 +117,31 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Favorites" />
-      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="research4" />
+              <option name="myItemId" value="harvardresearch" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="research4" />
+              <option name="myItemId" value="harvardresearch" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="research4" />
+              <option name="myItemId" value="harvardresearch" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="research4" />
+              <option name="myItemId" value="harvardresearch" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="research4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="research4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="research4" />
+              <option name="myItemId" value="harvardresearch" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -180,19 +149,58 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="harvardresearch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="harvardresearch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="harvardresearch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="harvardresearch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Favorites" />
+      <pane id="RailsProjectView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
   </component>
-  <component name="RunManager" selected="Rails.Development: research4">
+  <component name="RunManager" selected="Rails.Development: HarvardResearch">
     <configuration default="false" name="db:migrate" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="research4" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -271,7 +279,7 @@
       <method />
     </configuration>
     <configuration default="false" name="test" type="RakeRunConfigurationType" factoryName="Rake">
-      <module name="research4" />
+      <module name="HarvardResearch" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
@@ -291,7 +299,7 @@
       <method />
     </configuration>
     <configuration default="false" name="spec" type="RakeRunConfigurationType" factoryName="Rake">
-      <module name="research4" />
+      <module name="HarvardResearch" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
@@ -346,12 +354,50 @@
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
-    <list size="5">
+    <configuration default="false" name="Production: HarvardResearch" type="RailsRunConfigurationType" factoryName="Rails">
+      <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
+      <module name="HarvardResearch" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="C:\Users\William\harvardresearch" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" track_test_folders="true" runner="rcov" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="127.0.0.1" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="production" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Development: HarvardResearch" type="RailsRunConfigurationType" factoryName="Rails">
+      <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
+      <module name="HarvardResearch" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="C:\Users\William\harvardresearch" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" track_test_folders="true" runner="rcov" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="127.0.0.1" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
+      <method />
+    </configuration>
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Rake.db:migrate" />
       <item index="1" class="java.lang.String" itemvalue="Rake.test" />
       <item index="2" class="java.lang.String" itemvalue="Rake.spec" />
       <item index="3" class="java.lang.String" itemvalue="Rails.Production: research4" />
       <item index="4" class="java.lang.String" itemvalue="Rails.Development: research4" />
+      <item index="5" class="java.lang.String" itemvalue="Rails.Production: HarvardResearch" />
+      <item index="6" class="java.lang.String" itemvalue="Rails.Development: HarvardResearch" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -381,16 +427,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32868218" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24916944" sideWeight="0.6772655" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20747218" sideWeight="0.66976744" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20747218" sideWeight="0.6713178" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33023256" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32868218" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -432,16 +478,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/submissions/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/sessions/create.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/sessions/destroy.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -502,15 +538,31 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="35" selection-start="5700" selection-end="5700" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="model://research4">
       <provider selected="true" editor-type-id="AssociationsFileEditorProvider">
         <state>
           <settings isFieldsVisible="true" isMigrationFieldsVisible="true" isTypicalFieldsVisible="false" isOwnFieldsVisible="false" isHandToolMode="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/_form0.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="81" selection-start="1453" selection-end="1535" vertical-scroll-proportion="0.26842105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/_form1.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="8" selection-start="1641" selection-end="1641" vertical-scroll-proportion="0.6263158">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="2" selection-start="4068" selection-end="4068" vertical-scroll-proportion="0.8325123">
+          <folding />
         </state>
       </provider>
     </entry>

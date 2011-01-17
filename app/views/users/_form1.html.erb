@@ -55,7 +55,7 @@
   </div>
   <div class="field">
     <%= f.label :department %><br />
-    <%= f.text_field :department %>
+    <%= f.select :department, User::DEPARTMENTS, :prompt => "Select primary affiliation" %>
   </div>
   <div class="actions">
     <%= f.submit %>
