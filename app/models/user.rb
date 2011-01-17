@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
                "Romance Languages and Literatures", "Russia, Eastern Europe, and Central Asia",
                "Sanskrit and Indian Studies", "Slavic Languages and Literatures", "Sociology", "Statistics",
                "Visual and Environmental Studies", "Studies of Women, Gender, and Sexuality"]
-  DEPARTMENTS = ["African and African American Studies", "Anthropology", "Astronomy", "Celtic Languages and Literatures"
+  DEPARTMENTS = ["African and African American Studies", "Anthropology", "Astronomy", "Celtic Languages and Literatures",
                 "Chemistry and Chemical Biology", "The Classics", "Comparative Literature",
                 "Earth and Planetary Sciences", "East Asian Languages and Civilizations", "Economics", "English",
                 "Germanic Languages and Literatures", "Government", "History", "History of Art and Architecture",
