@@ -4,7 +4,12 @@ class JobsController < ApplicationController
 
   # lists all jobs
   def index  
-    @jobs = Job.all
+    @jobs = []
+    if params[:department].present?
+      User.with_department(params[:department]).each { |user| user.jobs.each { |job| @jobs.push( job ) } }
+    else
+      @jobs = Job.all
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @jobs }
