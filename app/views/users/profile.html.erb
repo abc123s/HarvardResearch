@@ -24,7 +24,8 @@
 <% elsif @user.usertype == 1 %>
     <%= link_to 'New Job Listing', new_job_path %> |
     <%= link_to 'Students List', users_path %> |
-    <%= link_to 'Edit Personal Information', edit_user_path(@user) %>
+    <%= link_to 'Edit Personal Information', edit_user_path(@user) %> |
+    <%= link_to 'Back', user_profile_path(remember_token[0]) %>
 
     <h1>Your Jobs</h1>
     <table>

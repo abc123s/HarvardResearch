@@ -6,13 +6,41 @@ class UsersController < ApplicationController
 
   # show all users
   def index
-    if User.find(remember_token[0]).usertype == 1
-      @users = User.with_type(0)
-    elsif User.find(remember_token[0]).usertype == 0
-      @users = User.with_type(1)
+    if User.find(remember_token[0]).usertype == 0
+      if params[:department].present?
+        @users = []
+        User.with_department(params[:department]).each { |user| @users.push( user ) }
+      else
+        @users = User.with_type(1)
+      end
+    elsif User.find(remember_token[0]).usertype == 1
+      if params[:concentration].present?
+        @users = []
+        User.with_concentration(params[:concentration]).each { |user| @users.push( user ) }
+      else
+        @users = User.with_type(0)
+      end
     else
       @users = User.all
     end
+
+    @departments = Set.new
+    User.all.each { |user|
+      if user.department?
+        @departments.add(user.department)
+      end
+      }
+    @departments.to_a.sort
+
+    @concentrations = Set.new
+    User.all.each { |user|
+      if user.concentration?
+        @concentration.add(user.concentration)
+      end
+      }
+    @concentrations.to_a.sort
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }

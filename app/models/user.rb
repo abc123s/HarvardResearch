@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   named_scope :with_department, lambda {|department| where(:department => department) }
   named_scope :with_type, lambda {|type| where(:usertype => type)}
+  named_scope :with_concentration, lambda {|concentration| where(:concentration => concentration) }
 
   # arrays for drop-down form lists
   YEARS = [2011, 2012, 2013, 2014]
@@ -75,9 +76,15 @@ class User < ActiveRecord::Base
     validates_numericality_of :phone, :allow_blank => true
     validates :phone, :length       => { :maximum => 15 }
 
+    # Student? method to determine if user is a student
+    def student?
+      :usertype == 0
+    end
+
     # Student-only validations
     validates_numericality_of :gpa, :allow_blank => true
     validates_length_of :resume, :maximum => 3000
+    validates_presence_of :concentration, :if => :student?
 
     # Professor? method to determine if user is a professor
     def professor?

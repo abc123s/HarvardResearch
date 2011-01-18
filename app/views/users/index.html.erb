@@ -1,4 +1,19 @@
 <h1>Listing users</h1>
+<% if User.find(remember_token[0]).usertype == 0 %>
+    <h2>Filter By </h2>
+    <%= form_tag({:controller => "users", :action => "index"}, :method => "get") do %>
+      <%= label_tag(:department, "Department")%>
+      <%= select_tag "department", options_for_select(@departments) %>
+      <%= submit_tag("Filter") %>
+    <% end %>
+<% elsif User.find(remember_token[0]).usertype == 1 %>
+    <h2>Filter By </h2>
+    <%= form_tag({:controller => "users", :action => "index"}, :method => "get") do %>
+      <%= label_tag(:concentration, "Concentration")%>
+      <%= select_tag "concentration", options_for_select(@concentrations) %>
+      <%= submit_tag("Filter") %>
+    <% end %>
+<% end %>
 
 <table>
   <tr>
