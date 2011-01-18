@@ -1,8 +1,8 @@
 <header>
   <%if remember_token[0]%>
-      <li><%= link_to logo, user_profile_path(remember_token[0].to_s) %></li>
+      <%= link_to logo, user_profile_path(remember_token[0].to_s) %>
   <%else%>
-      <li><%= link_to logo, root_path %></li>
+      <%= link_to logo, root_path %>
   <% end %>
   <nav class="round">
     <ul>
