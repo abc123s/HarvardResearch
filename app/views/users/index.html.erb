@@ -6,16 +6,19 @@
     <th>Last name</th>
     <th>Email</th>
     <th>Phone</th>
-    <th>Year</th>
-    <th>Concentration</th>
-    <th>Secondary</th>
-    <th>GPA</th>
-    <th>Resume</th>
-    <th>Privacy</th>
-    <th>Interests</th>
-    <th>Title</th>
-    <th>Location</th>
-    <th>Department</th>
+    <% if User.find(remember_token[0]).usertype != 0 %>
+        <th>Year</th>
+        <th>Concentration</th>
+        <th>Secondary</th>
+        <th>GPA</th>
+        <th>Resume</th>
+    <% end %>
+    <% if User.find(remember_token[0]).usertype != 1 %>
+        <th>Interests</th>
+        <th>Title</th>
+        <th>Location</th>
+        <th>Department</th>
+    <% end %>
     <th></th>
     <th></th>
     <th></th>
@@ -27,16 +30,20 @@
     <td><%= user.lastname %></td>
     <td><%= user.email %></td>
     <td><%= user.phone %></td>
-    <td><%= user.year %></td>
-    <td><%= user.concentration %></td>
-    <td><%= user.secondary %></td>
-    <td><%= user.gpa %></td>
-    <td><%= user.resume %></td>
-    <td><%= user.privacy %></td>
-    <td><%= user.interests %></td>
-    <td><%= user.title %></td>
-    <td><%= user.location %></td>
-    <td><%= user.department %></td>
+
+    <% if User.find(remember_token[0]).usertype != 0 %>
+        <td><%= user.year %></td>
+        <td><%= user.concentration %></td>
+        <td><%= user.secondary %></td>
+        <td><%= user.gpa %></td>
+        <td><%= user.resume %></td>
+    <% end %>
+    <% if User.find(remember_token[0]).usertype != 1 %>
+        <td><%= user.interests %></td>
+        <td><%= user.title %></td>
+        <td><%= user.location %></td>
+        <td><%= user.department %></td>
+    <% end %>
     <td><%= link_to 'Show', user %></td>
     <% if remember_token[0] == user.id || User.find(remember_token[0]).usertype == 2 %>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
