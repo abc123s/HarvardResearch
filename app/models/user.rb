@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :jobs
 
   named_scope :with_department, lambda {|department| where(:department => department) }
+  named_scope :with_type, lambda {|type| where (:usertype => type)}
 
   # arrays for drop-down form lists
   YEARS = [2011, 2012, 2013, 2014]

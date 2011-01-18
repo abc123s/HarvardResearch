@@ -7,14 +7,15 @@ class UsersController < ApplicationController
   # show all users
   def index
     if User.find(remember_token[0]).usertype == 1
-      @users = User.all
-
-      respond_to do |format|
-        format.html # index.html.erb
-        format.xml  { render :xml => @users }
-      end
+      @users = User.with_type(0)
+    elsif User.find(remember_token[0]).usertype == 0
+      @users = User.with_type(1)
     else
-      redirect_to(user_profile_path(remember_token[0]))
+      @users = User.all
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @users }
     end 
   end
 
