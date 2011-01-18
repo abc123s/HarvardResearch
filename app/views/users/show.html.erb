@@ -80,7 +80,7 @@
   <% end %>
 </div>
 
-
+<% if remember_token[0] == @user.id %>
   <%= link_to 'Edit', edit_user_path(@user) %>
-
+<% end %>
 <%= link_to 'Back', user_profile_path(remember_token[0]) %>
