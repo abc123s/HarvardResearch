@@ -57,6 +57,26 @@
     <% end %>
 </div>
 
+<div class="right">
+  <% if @user.usertype == 1 %>
+  <h1>Jobs</h1>
+  <table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+  <% @user.jobs.each do |job| %>
+  <tr>
+    <td><%= job.title %></td>
+    <td><%= job.description %></td>
+    <td><%= link_to 'Show', job %></td>
+  </tr>
+  </table>
+  <% end %>
+  <% end %>
+</div>
+
 <% if remember_token[0] == @user.id %>
   <%= link_to 'Edit', edit_user_path(@user) %>
 <% end %>
