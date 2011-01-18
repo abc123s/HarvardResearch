@@ -1,5 +1,5 @@
 <header>
-  <%= link_to logo, root_path %>
+  <%= link_to logo, user_profile_path(remember_token[0].to_s) %>
   <nav class="round">
     <ul>
     <%if remember_token[0]%>
