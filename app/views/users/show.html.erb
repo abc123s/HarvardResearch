@@ -1,86 +1,75 @@
-<div class="left">
-    <p>
-      <b>First name:</b>
-      <%= @user.firstname %>
-    </p>
-    <p>
-      <b>Last name:</b>
-      <%= @user.lastname %>
-    </p>
-    <p>
-      <b>Email:</b>
-      <%= @user.email %>
-    </p>
-    <p>
-      <b>Phone Number:</b>
-      <%= @user.phone %>
-    </p>
-    <p>
-      <b>Privacy:</b>
-      <%= @user.privacy %>
-    </p>
+<p>
+  <b>First name:</b>
+  <%= @user.firstname %>
+</p>
 
-    <% if User.find(remember_token[0]).usertype != 0 %>
-    <p>
-      <b>Year:</b>
-      <%= @user.year %>
-    </p>
-    <p>
-      <b>Concentration:</b>
-      <%= @user.concentration %>
-    </p>
-    <p>
-      <b>Secondary:</b>
-      <%= @user.secondary %>
-    </p>
-    <p>
-      <b>GPA:</b>
-      <%= @user.gpa %>
-    </p>
-    <p>
-      <b>Resume:</b>
-      <%= @user.resume %>
-    </p>
-    <% elsif User.find(remember_token[0]).usertype != 1 %>
-    <p>
-      <b>Interests:</b>
-      <%= @user.interests %>
-    </p>
-    <p>
-      <b>Title:</b>
-      <%= @user.title %>
-    </p>
-    <p>
-      <b>Location:</b>
-      <%= @user.location %>
-    </p>
-    <p>
-      <b>Department:</b>
-      <%= @user.department %>
-    </p>
-    <% end %>
-</div>
+<p>
+  <b>Last name:</b>
+  <%= @user.lastname %>
+</p>
 
-<div class="right">
-  <% if @user.usertype == 1 %>
-  <h1>Jobs</h1>
-  <table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-  </tr>
-  <% @user.jobs.each do |job| %>
-  <tr>
-    <td><%= job.title %></td>
-    <td><%= job.description %></td>
-    <td><%= link_to 'Show', job %></td>
-  </tr>
-  </table>
-  <% end %>
-</div>
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
 
-<% if remember_token[0] == @user.id %>
-  <%= link_to 'Edit', edit_user_path(@user) %>
+<p>
+  <b>Phone Number:</b>
+  <%= @user.phone %>
+</p>
+
+<p>
+  <b>Privacy:</b>
+  <%= @user.privacy %>
+</p>
+
+<% if User.find(remember_token[0]).usertype == 0 %>
+<p>
+  <b>Year:</b>
+  <%= @user.year %>
+</p>
+
+<p>
+  <b>Concentration:</b>
+  <%= @user.concentration %>
+</p>
+
+<p>
+  <b>Secondary:</b>
+  <%= @user.secondary %>
+</p>
+
+<p>
+  <b>GPA:</b>
+  <%= @user.gpa %>
+</p>
+
+<p>
+  <b>Resume:</b>
+  <%= @user.resume %>
+</p>
+
+<% else %>
+<p>
+  <b>Interests:</b>
+  <%= @user.interests %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @user.title %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @user.location %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%= @user.department %>
+</p>
 <% end %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', user_profile_path(remember_token[0]) %>
