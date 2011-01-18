@@ -1,18 +1,21 @@
 <header>
-  <%= link_to logo, user_profile_path(remember_token[0].to_s) %>
+  <%if remember_token[0]%>
+      <li><%= link_to logo, user_profile_path(remember_token[0].to_s) %></li>
+  <%else%>
+      <li><%= link_to logo, root_path %></li>
+  <% end %>
   <nav class="round">
     <ul>
     <%if remember_token[0]%>
-      <li><%= link_to "Home", user_profile_path(remember_token[0].to_s) %></li>
+        <li><%= link_to "Home", user_profile_path(remember_token[0].to_s) %></li>
     <%else%>
-      <li><%= link_to "Home", root_path %></li>
-
+        <li><%= link_to "Home", root_path %></li>
     <%end%>  
-      <% if signed_in? %>
-      <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
-      <% else %>
-      <li><%= link_to "Sign in", "/" %></li>
-      <% end %>
+    <% if signed_in? %>
+        <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+    <% else %>
+        <li><%= link_to "Sign in", "/" %></li>
+    <% end %>
     </ul>
   </nav>
 </header>
