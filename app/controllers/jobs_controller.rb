@@ -10,6 +10,15 @@ class JobsController < ApplicationController
     else
       @jobs = Job.all
     end
+    @departments = Set.new
+    User.all.each { |user|
+      if user.department?
+        if !user.jobs.empty? 
+          @departments.add(user.department) 
+        end
+      end
+      }
+    @departments.to_a.sort
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @jobs }

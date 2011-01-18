@@ -2,7 +2,7 @@
 <h2>Filter By </h2> 
 <%= form_tag({:controller => "jobs", :action => "index"}, :method => "get") do %>
   <%= label_tag(:department, "Department")%>
-  <%= text_field_tag(:department) %>
+  <%= select_tag "department", options_for_select(@departments) %>
   <%= submit_tag("Filter") %>
 <% end %>
  
