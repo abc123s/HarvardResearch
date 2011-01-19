@@ -1,21 +1,32 @@
 <header>
   <%if remember_token[0]%>
+    <div id="logo">  
       <%= link_to logo, user_profile_path(remember_token[0].to_s) %>
+    </div>  
   <%else%>
-    <div class="wrapper">
-      <div class="center">
-        <%= link_to logo, root_path %>
-      </div>
+    <div id="logo">
+      <%= link_to logo, root_path %>
     </div>
   <% end %>
   <nav class="round">
     <ul>
-    <%if remember_token[0]%>
-        <li><%= link_to "Home", user_profile_path(remember_token[0].to_s) %></li>
-    <%end%>  
-    <% if signed_in? %>
+    <%if signed_in?%>
+        <li><%= link_to "Home", user_profile_path(remember_token[0].to_s) %></li
         <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
     <% end %>
     </ul>
   </nav>
+  <% if signed_in? %>
+    <% if User.find(remember_token[0]).usertype == 0 %>
+      <%= link_to 'Job List', jobs_path %> | 
+      <%= link_to 'Professor List', users_path %> |
+      <%= link_to 'Edit Personal Information', edit_user_path(@user) %> |
+      <%= link_to 'Back', user_profile_path(remember_token[0]) %>
+    <%else%>
+      <%= link_to 'New Job Listing', new_job_path %> |
+      <%= link_to 'Student List', users_path %> |
+      <%= link_to 'Edit Personal Information', edit_user_path(@user) %> |
+      <%= link_to 'Back', user_profile_path(remember_token[0]) %>
+    <%end%> 
+  <%end%>
 </header>

@@ -65,7 +65,7 @@ nav ul li a:hover {
   -moz-border-radius:    10px;
   -webkit-border-radius: 10px;
   border-radius:         10px;
-
+}
 
 /* Footer */
 footer {
@@ -80,14 +80,9 @@ footer nav {
   float: none;
 }
 
-.container{
-  width: 800px; !important
-}
-div.wrapper{
-  width: 800px;
-}
-
-div.center { 
+div#logo {
+  margin-top: 30px;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
 }

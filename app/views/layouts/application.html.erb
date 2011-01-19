@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="container">
-
+      <div class="prepend-2 span-20 append-2">
       <%= render 'layouts/header' %>
       <section class="round">
         <% flash.each do |key, value| %>
@@ -24,7 +24,7 @@
         <%= yield %>
       </section>
       <%= render 'layouts/footer' %>
-
+    </div>
     </div>
 </body>
 

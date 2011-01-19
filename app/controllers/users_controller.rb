@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     @concentrations = Set.new
     User.all.each { |user|
       if user.concentration?
-        @concentration.add(user.concentration)
+        @concentrations.add(user.concentration)
       end
       }
     @concentrations.to_a.sort
@@ -136,19 +136,22 @@ class UsersController < ApplicationController
   def profile
     @user = User.find(params[:id])
     @title = @user.firstname
-    
-    if @user.usertype == 1
-      @jobs = @user.jobs
-      respond_to do |format|
-        format.html # profile.html.erb
-        format.xml  { render :xml => @jobs }
+    if @user.id == remember_token[0]  
+      if @user.usertype == 1
+        @jobs = @user.jobs
+        respond_to do |format|
+          format.html # profile.html.erb
+          format.xml  { render :xml => @jobs }
+        end
+      else
+        @submissions = @user.submissions
+        respond_to do |format|
+          format.html # profile.html.erb
+          format.xml { render :xml => @submissions }
+        end
       end
     else
-      @submissions = @user.submissions
-      respond_to do |format|
-        format.html # profile.html.erb
-        format.xml { render :xml => @submissions }
-      end
+      redirect_to(user_profile_path(remember_token[0]))
     end
   end
 
