@@ -2,6 +2,24 @@
 <html>
 <head>
 <link href="/stylesheets/index.css" rel="stylesheet" type="text/css">
+<script>
+  function pmouseover() {
+    document.getElementById('professors').style.borderColor = "white";
+    document.getElementById('professors').style.color = "white";
+  }
+  function pmouseout() { 
+    document.getElementById('professors').style.borderColor = "black";
+    document.getElementById('professors').style.color = "black";
+  } 
+  function smouseover() {
+    document.getElementById('students').style.borderColor = "white";
+    document.getElementById('students').style.color = "white";
+  }
+  function smouseout() {
+    document.getElementById('students').style.borderColor = "black"
+    document.getElementById('students').style.color = "black";
+  } 
+</script>
 </head>
 <body>
 <div id='wrapper'>
@@ -9,18 +27,17 @@
 <img src="/images/logo.png">
 </div>
 <div id='middle'>
-<a href="/signin/student">
-<div id='students'> 
-Students <br />
-<img src="/images/hat.png"> 
+<a href="/signin/student" onMouseOver="smouseover()" onMouseOut="smouseout()">
+<div id='students'>
+<div class='button'>Students</div>
 </div>
 </a>
-<a href="/signin/professor">
+<a href="/signin/professor" onMouseOver="pmouseover()" onMouseOut="pmouseout()" >
 <div id='professors'>
- Professors <br />
-<img src="/images/labcoat.jpg">
+<div class='button'>Professors</div>
 </div>
 </a>
+<div id='info'>HarvardResearch is a website that strives to connect the young and curious undergraduates with the faculty and staff of Harvard. As a research portal, HarvardResearch hopes to simplify the process of finding mentors or mentees, and encourage research on campus </div>
 </div>
 </div>
 </body>
