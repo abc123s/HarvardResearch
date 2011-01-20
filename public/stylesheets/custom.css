@@ -109,8 +109,21 @@ div#sign{
   padding-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
-  
-  background-color: #800000;
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.06, rgb(100,0,0)),
+        color-stop(0.53, rgb(150,0,0)),
+        color-stop(0.77, rgb(100,0,0))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(200,0,0) 6%,
+        rgb(150,0,0) 53%,
+        rgb(100,0,0) 77%
+    );
 
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
