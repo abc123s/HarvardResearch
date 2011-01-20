@@ -14,23 +14,27 @@
   <%= csrf_meta_tag %>
   <% if !signed_in? %>
     <style>
-      div#wrapper {
+      div#wrapper1 {
         background-image:url('/images/MortarBoard.jpg');
-        width: 800px;
+        height: 400px;
+        margin-left: auto;
+        margin-right: auto;
       }
     </style>
   <%end%>
 </head>
 <body>
   <div class="container"> 
-      <%= render 'layouts/header' %>
     <div id="wrapper">
+      <%= render 'layouts/header' %>
+    <div id="wrapper1">
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
         <% end %>
         <%= yield %>
       <%= render 'layouts/footer' %>
     </div>
+  </div>
   </div>
 </body>
 

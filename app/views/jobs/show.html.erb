@@ -31,7 +31,9 @@
 </p>
 </div>
 <% if User.find(remember_token[0]).usertype == 0%>
-  <%= link_to 'Apply', new_submission_path + "/" + @job.id.to_s %>
+  <div style="clear:both">
+  <%= button_to 'Apply', new_submission_path + "/" + @job.id.to_s %>
+  </div>
 <% else %>
   <%= link_to 'Edit', edit_job_path(@job) %> |
   <%= link_to 'Back', user_profile_path(remember_token[0].to_s) %>

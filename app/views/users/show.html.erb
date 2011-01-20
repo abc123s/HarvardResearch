@@ -1,4 +1,4 @@
-<div class="left">
+<div id="left">
     <p>
       <b>First name:</b>
       <%= @user.firstname %>
@@ -57,7 +57,7 @@
     <% end %>
 </div>
 
-<div class="right">
+<div id="right">
   <% if @user.usertype == 1 %>
   <h1>Jobs</h1>
   <table>
@@ -76,8 +76,8 @@
   <% end %>
   <% end %>
 </div>
-
+<div id="bottom">
 <% if remember_token[0] == @user.id %>
   <%= link_to 'Edit', edit_user_path(@user) %> |
 <% end %>
-<%= link_to 'Back', user_profile_path(remember_token[0]) %>
+</div>
