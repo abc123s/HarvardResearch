@@ -31,28 +31,33 @@ div#middle
 div#students
 {
   margin-top: 75px;
-  margin-left: 100px;
+  margin-left: 125px;
   text-align: center;
   float: left;
   width: 225px;
   height: 80px;
 
   background-color: #800000;
-  
+  color: white;  
+
   font-size: 36px;
 
   -moz-border-radius: 20px;
   border-radus: 20px;
   -webkit-border-radius: 20px;
 
-  border-width: 5px;
+  border-top-width: 2px;
+  border-left-width: 2px;
+  border-bottom-width: 6px;
+  border-right-width: 6px;
   border-style: solid;
+  border-color: grey;
 }
 
 div#professors
 {
   margin-top: 75px;
-  margin-right: 100px;
+  margin-right: 125px;
   text-align: center;
   
   float: right;
@@ -60,6 +65,7 @@ div#professors
   height: 80px;
 
   background-color: #800000;
+  color: white;
   
   font-size: 36px;
   
@@ -77,17 +83,27 @@ div#top
 }
 
 div#info 
-{ 
+{  
+  width: 800px;
+  height: 80px;
+
   clear: both;
   position: relative;
   top: 100px;
 
-  padding: 10px 20px 10px 20px;
+  padding: 0px 10px 10px 10px;
 
   text-align: center;
   
-  background-color: #C0C0C0;
-  color: white;
+  background-color: white;
+  color: black;
+  
+  border-color: grey;
+  border-style: solid;
+  border-left-width: 1px;
+  border-top-width: 1px;
+  border-right-width: 4px;
+  border-bottom-width: 4px; 
 }
 
 div.button

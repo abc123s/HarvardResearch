@@ -4,20 +4,20 @@
 <link href="/stylesheets/index.css" rel="stylesheet" type="text/css">
 <script>
   function pmouseover() {
-    document.getElementById('professors').style.borderColor = "white";
-    document.getElementById('professors').style.color = "white";
+    document.getElementById('professors').style.backgroundColor = "#d00000";
+   // document.getElementById('professors').style.color = "white";
   }
   function pmouseout() { 
-    document.getElementById('professors').style.borderColor = "black";
-    document.getElementById('professors').style.color = "black";
+    document.getElementById('professors').style.backgroundColor = "#800000";
+   // document.getElementById('professors').style.color = "black";
   } 
   function smouseover() {
-    document.getElementById('students').style.borderColor = "white";
-    document.getElementById('students').style.color = "white";
+    document.getElementById('students').style.backgroundColor = "#d00000";
+  //  document.getElementById('students').style.color = "white";
   }
   function smouseout() {
-    document.getElementById('students').style.borderColor = "black"
-    document.getElementById('students').style.color = "black";
+    document.getElementById('students').style.backgroundColor = "#800000";
+   // document.getElementById('students').style.color = "black";
   } 
 </script>
 </head>
@@ -27,17 +27,17 @@
 <img src="/images/logo.png">
 </div>
 <div id='middle'>
-<a href="/signin/student" onMouseOver="smouseover()" onMouseOut="smouseout()">
+<a href="/signin/student" onMouseOver="smouseover()" onMouseOut="smouseout()" onMouseClick="smouseout()">
 <div id='students'>
 <div class='button'>Students</div>
 </div>
 </a>
-<a href="/signin/professor" onMouseOver="pmouseover()" onMouseOut="pmouseout()" >
+<a href="/signin/professor" onMouseOver="pmouseover()" onMouseOut="pmouseout()" onMouseClick="pmouseout()">
 <div id='professors'>
 <div class='button'>Professors</div>
 </div>
 </a>
-<div id='info'>HarvardResearch is a website that strives to connect the young and curious undergraduates with the faculty and staff of Harvard. As a research portal, HarvardResearch hopes to simplify the process of finding mentors or mentees, and encourage research on campus </div>
+<div id='info'><p>HarvardResearch is a website that strives to connect the young and curious undergraduates with the faculty and staff of Harvard. As a research portal, HarvardResearch hopes to simplify the process of finding mentors or mentees, and encourage research on campus.<p></div>
 </div>
 </div>
 </body>
