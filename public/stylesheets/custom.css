@@ -117,7 +117,16 @@ div#sign{
   border-radius: 15px;
 }
 
-div#sign h1 
+div#sign h2 
 {
+  padding: 0px;
+  padding-bottom: 10px;
+  margin: 0px;
+  font-weight: bold;
   color: white;
+}
+
+div#sign a
+{
+  color:  #7FFF00;
 } 

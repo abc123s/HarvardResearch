@@ -2,12 +2,20 @@ class SessionsController < ApplicationController
   
   # Student login page.
   def new0
-    @title = 'Student Login'
+    if signed_in?
+      redirect_to user_profile_path(remember_token[0])
+    else  
+      @title = 'Student Login'
+    end
   end
   
   # Professor login page.
   def new1
+    if signed_in?
+      redirect_to user_profile_path(remember_token[0])
+    else
       @title = 'Professor Login'
+    end
   end
   
   # Create new session cookie, when a student or professor logs in.

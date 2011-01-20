@@ -1,14 +1,14 @@
 <div id='sign'>
-  <h1>Student</h1>
+  <h2>Student</h2>
 
   <%= form_for(:session, :url => '/session/retry/0') do |f| %>
     <div class="field">
       Email: <br />
-      <%= f.text_field :email, :size => 18, :maxlength => 30, :class => 'text' %>
+      <%= f.text_field :email, :size => 18, :maxlength => 50, :class => 'text' %>
     </div>
     <div class="field">
       Password: <br />
-      <%= f.password_field :passwordi, :size => 18, :maxlength => 30, :class => 'text' %>
+      <%= f.password_field :passwordi, :size => 18, :maxlength => 50, :class => 'text' %>
     </div>
     <div class="actions">
       <%= f.submit "Sign in" %>

@@ -20,12 +20,12 @@
     <% if User.find(remember_token[0]).usertype == 0 %>
       <%= link_to 'Job List', jobs_path %> | 
       <%= link_to 'Professor List', users_path %> |
-      <%= link_to 'Edit Personal Information', edit_user_path(@user) %> |
+      <%= link_to 'Edit Personal Information', edit_user_path(remember_token[0]) %> |
       <%= link_to 'Back', user_profile_path(remember_token[0]) %>
     <%else%>
       <%= link_to 'New Job Listing', new_job_path %> |
       <%= link_to 'Student List', users_path %> |
-      <%= link_to 'Edit Personal Information', edit_user_path(@user) %> |
+      <%= link_to 'Edit Personal Information', edit_user_path(remember_token[0]) %> |
       <%= link_to 'Back', user_profile_path(remember_token[0]) %>
     <%end%> 
   <%end%>
