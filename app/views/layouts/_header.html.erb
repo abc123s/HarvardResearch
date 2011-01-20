@@ -1,8 +1,8 @@
 <header>
-  <%if remember_token[0]%>
-    <div id="logo">  
+  <%if signed_in?%>
+    <div id="logo2"> 
       <%= link_to logo, user_profile_path(remember_token[0].to_s) %>
-    </div>  
+    </div>
   <%else%>
     <div id="logo">
       <%= link_to logo, root_path %>

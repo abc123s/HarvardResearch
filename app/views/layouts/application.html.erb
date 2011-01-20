@@ -22,19 +22,16 @@
   <%end%>
 </head>
 <body>
-    <div class="container">
-      
+  <div class="container"> 
       <%= render 'layouts/header' %>
-      <div id="wrapper">
-      <section class="round">
+    <div id="wrapper">
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
         <% end %>
         <%= yield %>
-      </section>
-      </div>
       <%= render 'layouts/footer' %>
     </div>
+  </div>
 </body>
 
 

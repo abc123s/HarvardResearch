@@ -95,6 +95,12 @@ div#logo {
   margin-right: auto;
 }
 
+div#logo2{
+  margin-left: -7px;
+  margin-top: 30px;
+  margin-bottom: 24px;
+}
+
 div#sign{
   position: relative; 
   top: 30px;
