@@ -28,11 +28,10 @@ div#middle
   background-image:url('/images/MortarBoard.jpg');
 }
 
-a div#students, a div#professors 
+a div#students
 {
   margin-top: 75px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 125px;
   text-align: center;
   float: left;
   width: 225px;
@@ -67,11 +66,48 @@ a div#students, a div#professors
 
 }
 
-a:hover div#students, a:hover div#professors
+a div#professors
 {
   margin-top: 75px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-right: 125px;
+  text-align: center;
+  float: right;
+  width: 225px;
+  height: 80px;
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.06, rgb(150,0,0)),
+        color-stop(0.53, rgb(187,0,0)),
+        color-stop(0.77, rgb(224,0,0))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(150,0,0) 6%,
+        rgb(187,0,0) 53%,
+        rgb(224,0,0) 77%
+    );
+
+  color: white;
+
+  font-size: 36px;
+
+  -moz-border-radius: 20px;
+  border-radus: 20px;
+  -webkit-border-radius: 20px;
+
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+
+}
+
+a:hover div#students
+{
+  margin-top: 75px;
+  margin-left: 125px;
   text-align: center;
   float: left;
   width: 225px;
@@ -93,6 +129,43 @@ a:hover div#students, a:hover div#professors
     );
 
   color: white;  
+
+  font-size: 36px;
+
+  -moz-border-radius: 20px;
+  border-radus: 20px;
+  -webkit-border-radius: 20px;
+
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+}
+
+a:hover div#professors
+{
+  margin-top: 75px;
+  margin-right: 125px;
+  text-align: center;
+  float: right;
+  width: 225px;
+  height: 80px;
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.06, rgb(224,0,0)),
+        color-stop(0.53, rgb(187,0,0)),
+        color-stop(0.77, rgb(150,0,0))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(224,0,0) 6%,
+        rgb(202,0,0) 53%,
+        rgb(180,0,0) 77%
+    );
+
+  color: white;
 
   font-size: 36px;
 
