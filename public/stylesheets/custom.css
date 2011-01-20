@@ -116,13 +116,13 @@ div#sign{
         left top,
         color-stop(0.06, rgb(100,0,0)),
         color-stop(0.53, rgb(150,0,0)),
-        color-stop(0.77, rgb(100,0,0))
+        color-stop(0.77, rgb(200,0,0))
     );
     background-image: -moz-linear-gradient(
         center bottom,
-        rgb(200,0,0) 6%,
+        rgb(100,0,0) 6%,
         rgb(150,0,0) 53%,
-        rgb(100,0,0) 77%
+        rgb(200,0,0) 77%
     );
 
   -webkit-border-radius: 15px;
@@ -142,4 +142,35 @@ div#sign h2
 div#sign a
 {
   color:  #7FFF00;
+}
+
+div#left
+{
+  float: left;
+}
+
+div#right
+{
+  float: right;
+}
+
+div#bottom
+{
+  clear: both;
+}
+
+#user_resume
+{
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+}
+
+#line
+{
+  margin-top: -10px;
+  margin-bottom: 30px;
+  height: 2px;
+  width: 600px;
+  background-color: #800000;
 } 

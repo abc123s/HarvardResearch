@@ -13,6 +13,7 @@
   <div class="field">
     <%= f.hidden_field :usertype %>
   </div>
+  <div id="left">
   <div class="field">
     <%= f.label :firstname, "First Name" %><br />
     <%= f.text_field :firstname %>
@@ -33,17 +34,11 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
+  </div>
+  <div id="right">
   <div class="field">
     <%= f.label :phone, "Phone Number" %><br />
     <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :privacy %><br />
-    <%= f.check_box :privacy %>
-  </div>
-  <div class="field">
-    <%= f.label :interests %><br />
-    <%= f.text_area :interests %>
   </div>
   <div class="field">
     <%= f.label :title %><br />
@@ -57,7 +52,18 @@
     <%= f.label :department %><br />
     <%= f.select :department, User::DEPARTMENTS, :prompt => "Select primary affiliation" %>
   </div>
+  </div>
+  <div id="bottom">
+  <div class="field">
+    <%= f.label :interests %><br />
+    <%= f.text_area :interests %>
+  </div>
+  <div class="field">
+    <%= f.label :privacy %><br />
+    <%= f.check_box :privacy %>
+  </div>
   <div class="actions">
     <%= f.submit %>
+  </div>
   </div>
 <% end %>
