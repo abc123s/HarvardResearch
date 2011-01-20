@@ -82,7 +82,6 @@ footer nav {
 
 div#wrapper {
   width: 800px;
-  height: 400px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -152,11 +151,13 @@ div#sign a
 
 div#left
 {
+  width: 400px;
   float: left;
 }
 
 div#right
 {
+  width: 400px;
   float: right;
 }
 
