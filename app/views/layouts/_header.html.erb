@@ -3,30 +3,32 @@
     <div id="logo2"> 
       <%= link_to logo, user_profile_path(remember_token[0].to_s) %>
     </div>
+    <nav class="round">
+      <div id="signout">
+      <ul>
+         <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+      </ul>
+      </div>
+    </nav>
+    <div id="headline1"></div>
+    <nav class="round">
+      <ul>
+        <li><%= link_to "Profile", user_profile_path(remember_token[0].to_s) %></li>
+        <% if User.find(remember_token[0]).usertype == 0 %>
+          <li><%= link_to 'Job List', jobs_path %></li>
+          <li><%= link_to 'Professor List', users_path %></li>
+          <li><%= link_to 'Edit Personal Information', edit_user_path(remember_token[0]) %></li>
+        <%else%>
+          <li><%= link_to 'New Job Listing', new_job_path %></li>
+          <li><%= link_to 'Student List', users_path %></li>
+          <li><%= link_to 'Edit Personal Information', edit_user_path(remember_token[0]) %></li>
+        <%end%>
+      </ul>
+    </nav>
+    <div id="headline2"></div>
   <%else%>
     <div id="logo">
       <%= link_to logo, root_path %>
     </div>
   <% end %>
-  <% if signed_in? %>
-    <nav class="round">
-      <ul>
-        <li><%= link_to "Home", user_profile_path(remember_token[0].to_s) %></li
-        <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
-      </ul>
-    </nav>
-  <%end%>
-  <% if signed_in? %>
-    <% if User.find(remember_token[0]).usertype == 0 %>
-      <%= link_to 'Job List', jobs_path %> | 
-      <%= link_to 'Professor List', users_path %> |
-      <%= link_to 'Edit Personal Information', edit_user_path(remember_token[0]) %> |
-      <%= link_to 'Back', user_profile_path(remember_token[0]) %>
-    <%else%>
-      <%= link_to 'New Job Listing', new_job_path %> |
-      <%= link_to 'Student List', users_path %> |
-      <%= link_to 'Edit Personal Information', edit_user_path(remember_token[0]) %> |
-      <%= link_to 'Back', user_profile_path(remember_token[0]) %>
-    <%end%> 
-  <%end%>
 </header>

@@ -37,7 +37,7 @@ nav ul li {
   list-style-type: none;
   display: inline-block;
   padding: 0.2em 0;
-  width:100px;
+  width:160px;
   background:#D0D0D0;
   float:left;
   text-align:center;
@@ -179,4 +179,28 @@ div#bottom
   height: 2px;
   width: 600px;
   background-color: #800000;
-} 
+}
+
+#headline1
+{
+  margin-top: -14px;
+  height: 2px;
+  width: 860px;
+  background-color: #800000;
+}
+
+#headline2
+{
+  margin-top: -14px;
+  margin-bottom: 20px;
+  height: 2px;
+  width: 860px;
+  background-color: #800000;
+}
+
+
+#signout
+{
+  float: right;
+  margin-bottom: 20px;
+}
