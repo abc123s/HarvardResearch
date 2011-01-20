@@ -186,7 +186,7 @@ div#bottom
 {
   margin-top: -14px;
   height: 2px;
-  width: 860px;
+  width: 645px;
   background-color: #800000;
 }
 
@@ -195,12 +195,14 @@ div#bottom
   margin-top: -14px;
   margin-bottom: 20px;
   height: 2px;
-  width: 860px;
+  width: 645px;
   background-color: #800000;
 }
 
 
 #signout
 {
+  border: 3px outset #800000;
+  margin-top: -70px;
   float: right;
 }
