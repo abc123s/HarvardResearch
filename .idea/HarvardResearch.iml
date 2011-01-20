@@ -56,6 +56,11 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] rack-mount (v0.6.13, C:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] actionpack (v3.0.3, C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] arel (v2.0.6, C:/Ruby192/lib/ruby/gems/1.9.1/gems/arel-2.0.6)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] taps (v0.3.15, C:/Ruby192/lib/ruby/gems/1.9.1/gems/taps-0.3.15)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] sequel (v3.17.0, C:/Ruby192/lib/ruby/gems/1.9.1/gems/sequel-3.17.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rest-client (v1.6.1, C:/Ruby192/lib/ruby/gems/1.9.1/gems/rest-client-1.6.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] sinatra (v1.0, C:/Ruby192/lib/ruby/gems/1.9.1/gems/sinatra-1.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] json (v1.4.6, C:/Ruby192/lib/ruby/gems/1.9.1/gems/json-1.4.6-x86-mingw32)" level="application" />
   </component>
 </module>
 

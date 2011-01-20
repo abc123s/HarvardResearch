@@ -37,7 +37,21 @@ div#students
   width: 225px;
   height: 80px;
 
-  background-color: #800000;
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.06, rgb(128,0,0)),
+        color-stop(0.53, rgb(176,0,0)),
+        color-stop(0.77, rgb(224,0,0))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(128,0,0) 6%,
+        rgb(176,0,0) 53%,
+        rgb(224,0,0) 77%
+    );
+
   color: white;  
 
   font-size: 36px;
@@ -46,12 +60,10 @@ div#students
   border-radus: 20px;
   -webkit-border-radius: 20px;
 
-  border-top-width: 2px;
-  border-left-width: 2px;
-  border-bottom-width: 6px;
-  border-right-width: 6px;
   border-style: solid;
-  border-color: grey;
+  border-width: 2px;
+  border-color: white;
+
 }
 
 div#professors
@@ -64,7 +76,21 @@ div#professors
   width: 225px;
   height: 80px;
 
-  background-color: #800000;
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.06, rgb(128,0,0)),
+        color-stop(0.53, rgb(176,0,0)),
+        color-stop(0.77, rgb(224,0,0))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(128,0,0) 6%,
+        rgb(176,0,0) 53%,
+        rgb(224,0,0) 77%
+    );
+
   color: white;
   
   font-size: 36px;
@@ -73,8 +99,9 @@ div#professors
   border-radus: 20px;
   -webkit-border-radius: 20px;
 
-  border-width: 5px;
   border-style: solid;
+  border-width: 2px;
+  border-color: white;
 }
 
 div#top 
