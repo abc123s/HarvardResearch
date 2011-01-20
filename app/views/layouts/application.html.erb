@@ -12,19 +12,28 @@
   <%= stylesheet_link_tag 'custom', :media => 'screen' %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+  <% if !signed_in? %>
+    <style>
+      div#wrapper {
+        background-image:url('/images/MortarBoard.jpg');
+        width: 800px;
+      }
+    </style>
+  <%end%>
 </head>
 <body>
     <div class="container">
-      <div class="prepend-2 span-20 append-2">
+      
       <%= render 'layouts/header' %>
+      <div id="wrapper">
       <section class="round">
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
         <% end %>
         <%= yield %>
       </section>
+      </div>
       <%= render 'layouts/footer' %>
-    </div>
     </div>
 </body>
 

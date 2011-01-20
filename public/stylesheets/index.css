@@ -71,6 +71,11 @@ div#professors
   border-style: solid;
 }
 
+div#top 
+{
+  margin: 30px;
+}
+
 div#info 
 { 
   clear: both;

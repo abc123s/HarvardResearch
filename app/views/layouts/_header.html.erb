@@ -8,14 +8,14 @@
       <%= link_to logo, root_path %>
     </div>
   <% end %>
-  <nav class="round">
-    <ul>
-    <%if signed_in?%>
+  <% if signed_in? %>
+    <nav class="round">
+      <ul>
         <li><%= link_to "Home", user_profile_path(remember_token[0].to_s) %></li
         <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
-    <% end %>
-    </ul>
-  </nav>
+      </ul>
+    </nav>
+  <%end%>
   <% if signed_in? %>
     <% if User.find(remember_token[0]).usertype == 0 %>
       <%= link_to 'Job List', jobs_path %> | 
