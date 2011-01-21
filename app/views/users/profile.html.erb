@@ -1,5 +1,63 @@
 <% if @user.usertype == 0 %>
   <div id='left'>
+    <p>
+      <b>First name:</b>
+      <%= @user.firstname %>
+    </p>
+    <p>
+      <b>Last name:</b>
+      <%= @user.lastname %>
+    </p>
+    <p>
+      <b>Email:</b>
+      <%= @user.email %>
+    </p>
+    <p>
+      <b>Phone Number:</b>
+      <%= @user.phone %>
+    </p>
+
+    <% if User.find(remember_token[0]).usertype != 0 %>
+        <p>
+          <b>Year:</b>
+          <%= @user.year %>
+        </p>
+        <p>
+          <b>Concentration:</b>
+          <%= @user.concentration %>
+        </p>
+        <p>
+          <b>Secondary:</b>
+          <%= @user.secondary %>
+        </p>
+        <p>
+          <b>GPA:</b>
+          <%= @user.gpa %>
+        </p>
+        <p>
+          <b>Resume:</b>
+          <%= @user.resume %>
+        </p>
+    <% elsif User.find(remember_token[0]).usertype != 1 %>
+        <p>
+          <b>Interests:</b>
+          <%= @user.interests %>
+        </p>
+        <p>
+          <b>Title:</b>
+          <%= @user.title %>
+        </p>
+        <p>
+          <b>Location:</b>
+          <%= @user.location %>
+        </p>
+        <p>
+          <b>Department:</b>
+          <%= @user.department %>
+        </p>
+    <% end %>
+  </div>
+  <div id='right'>
     <h1>Your Applications</h1>
     <table>
       <tr>
@@ -16,9 +74,6 @@
         <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
         <td><%= link_to 'Destroy', submission, :confirm => 'Are you sure?', :method => :delete %></td>
       </tr>
-  </div>
-  <div id='right'>
-
   </div>
 <% end %>
 
