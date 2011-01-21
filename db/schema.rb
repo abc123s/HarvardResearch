@@ -10,48 +10,49 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101209113841) do
+ActiveRecord::Schema.define(:version => 20110121202347) do
 
   create_table "jobs", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "funding"
-    t.text     "description"
-    t.string   "duration"
-    t.string   "position"
-    t.string   "location"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "title"
+    t.integer   "user_id"
+    t.string    "funding"
+    t.text      "description"
+    t.string    "duration"
+    t.string    "position"
+    t.string    "location"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "title"
   end
 
   create_table "submissions", :force => true do |t|
-    t.integer  "job_id"
-    t.integer  "user_id"
-    t.text     "coverletter"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "job_id"
+    t.integer   "user_id"
+    t.text      "coverletter"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "encrypted"
-    t.string   "salt"
-    t.string   "email"
-    t.string   "phone"
-    t.integer  "year"
-    t.string   "concentration"
-    t.string   "secondary"
-    t.float    "gpa"
-    t.text     "resume"
-    t.integer  "privacy"
-    t.text     "interests"
-    t.string   "title"
-    t.string   "location"
-    t.string   "department"
-    t.integer  "usertype"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "firstname"
+    t.string    "lastname"
+    t.string    "encrypted"
+    t.string    "salt"
+    t.string    "email"
+    t.string    "phone"
+    t.integer   "year"
+    t.string    "concentration"
+    t.string    "secondary"
+    t.float     "gpa"
+    t.text      "resume"
+    t.integer   "privacy"
+    t.text      "interests"
+    t.string    "title"
+    t.string    "location"
+    t.string    "department"
+    t.integer   "usertype"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "verified"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
