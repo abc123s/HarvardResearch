@@ -1,5 +1,5 @@
 <div style='float: left;'>
-
+<h1> Job Description </h1>
 <p>
   <b>Title:</b>
   <%= @job.title %>
@@ -35,8 +35,6 @@
   <%= button_to 'Apply', new_submission_path + "/" + @job.id.to_s %>
   </div>
 <% else %>
-  <%= link_to 'Edit', edit_job_path(@job) %> |
-  <%= link_to 'Back', user_profile_path(remember_token[0].to_s) %>
   <div style ='float: right;'> 
   <h1>Applications To This Job</h1>
   <table>
@@ -53,4 +51,9 @@
   <% end %>
   </table>
   </div>
+  <% if remember_token[0] == @job.user.id %>
+    <div style="clear:both">
+      <%= link_to 'Edit', edit_job_path(@job) %>
+    </div>
+  <%end%>
 <% end %>
