@@ -1,5 +1,5 @@
-<% if @user.usertype == 0 %>
-  <div id='left'>
+<div id='left'>
+  <h1> Your Profile </h1>
     <p>
       <b>First name:</b>
       <%= @user.firstname %>
@@ -17,7 +17,7 @@
       <%= @user.phone %>
     </p>
 
-    <% if User.find(remember_token[0]).usertype != 0 %>
+    <% if User.find(remember_token[0]).usertype != 1 %>
         <p>
           <b>Year:</b>
           <%= @user.year %>
@@ -38,7 +38,7 @@
           <b>Resume:</b>
           <%= @user.resume %>
         </p>
-    <% elsif User.find(remember_token[0]).usertype != 1 %>
+    <% elsif User.find(remember_token[0]).usertype != 0 %>
         <p>
           <b>Interests:</b>
           <%= @user.interests %>
@@ -56,8 +56,12 @@
           <%= @user.department %>
         </p>
     <% end %>
+    <% if remember_token[0] == @user.id %>
+      <%= link_to 'Edit', edit_user_path(@user) %>
+   <%end%>
   </div>
-  <div id='right'>
+<div id='right'>
+  <% if @user.usertype == 0 %>
     <h1>Your Applications</h1>
     <table>
       <tr>
@@ -74,10 +78,8 @@
         <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
         <td><%= link_to 'Destroy', submission, :confirm => 'Are you sure?', :method => :delete %></td>
       </tr>
-  </div>
-<% end %>
-
-<% elsif @user.usertype == 1 %>
+    <% end %>
+  <% elsif @user.usertype == 1 %>
     <h1>Your Jobs</h1>
     <table>
       <tr>
@@ -96,6 +98,7 @@
       </tr>
     <% end %>
     </table>
+  </div>
 <% else %>
     <%= link_to 'Job Listings', jobs_path %> |
     <%= link_to 'Professor List', users_path %> |
