@@ -1,4 +1,5 @@
 <% if @user.usertype == 0 %>
+  <div id='left'>
     <h1>Your Applications</h1>
     <table>
       <tr>
@@ -15,6 +16,10 @@
         <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
         <td><%= link_to 'Destroy', submission, :confirm => 'Are you sure?', :method => :delete %></td>
       </tr>
+  </div>
+  <div id='right'>
+
+  </div>
 <% end %>
 
 <% elsif @user.usertype == 1 %>

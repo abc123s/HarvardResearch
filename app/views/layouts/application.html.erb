@@ -14,7 +14,7 @@
   <%= csrf_meta_tag %>
   <% if !signed_in? %>
     <style>
-      div#wrapper1 {
+      div#wrapper0 {
         background-image:url('/images/MortarBoard.jpg');
         height: 400px;
         margin-left: auto;
@@ -27,7 +27,11 @@
   <div class="container"> 
     <div id="wrapper">
       <%= render 'layouts/header' %>
-    <div id="wrapper1">
+    <% if !signed_in? %>
+      <div id="wrapper0">
+    <% else %>
+      <div id="wrapper1">
+    <% end %>
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
         <% end %>

@@ -3,32 +3,22 @@
     <div id="logo2"> 
       <%= link_to logo, user_profile_path(remember_token[0].to_s) %>
     </div>
-    <nav class="round">
-      <div id="signout">
-      <ul>
-         <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
-      </ul>
-      </div>
-    </nav>
-    <div id="headline1"></div>
-    <nav class="round">
-      <ul>
-        <li><%= link_to "Profile", user_profile_path(remember_token[0].to_s) %></li>
-        <% if User.find(remember_token[0]).usertype == 0 %>
-          <li><%= link_to 'Job List', jobs_path %></li>
-          <li><%= link_to 'Professor List', users_path %></li>
-          <li><%= link_to 'Edit Personal Information', edit_user_path(remember_token[0]) %></li>
-        <%else%>
-          <li><%= link_to 'New Job Listing', new_job_path %></li>
-          <li><%= link_to 'Student List', users_path %></li>
-          <li><%= link_to 'Edit Personal Information', edit_user_path(remember_token[0]) %></li>
-        <%end%>
-      </ul>
-    </nav>
-    <div id="headline2"></div>
+    <div id='linkbar'>
+      <%= link_to "Profile", user_profile_path(remember_token[0].to_s) %> |
+      <% if User.find(remember_token[0]).usertype == 0 %>
+        <%= link_to 'Jobs', jobs_path %> | 
+        <%= link_to 'Professors', users_path %> |
+      <%else%>
+        <%= link_to 'New Job', new_job_path %> |
+        <%= link_to 'Students', users_path %> |
+      <%end%>
+      <%= link_to 'Sign Out', signout_path, :method => :delete %>
+    </div>
   <%else%>
     <div id="logo">
-      <%= link_to logo, root_path %>
+      <%= link_to root_path do %>
+        <img src='/images/largelogo.png'>
+      <% end %>
     </div>
   <% end %>
 </header>
