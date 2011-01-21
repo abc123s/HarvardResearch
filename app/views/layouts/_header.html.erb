@@ -7,7 +7,7 @@
       <%= link_to "Profile", user_profile_path(remember_token[0].to_s) %> |
       <% if User.find(remember_token[0]).usertype == 0 %>
         <%= link_to 'Jobs', jobs_path %> | 
-        <%= link_to 'Professors', users_path %> |
+        <%= link_to 'Faculty', users_path %> |
       <%else%>
         <%= link_to 'New Job', new_job_path %> |
         <%= link_to 'Students', users_path %> |

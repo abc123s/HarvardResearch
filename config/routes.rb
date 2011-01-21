@@ -12,7 +12,7 @@ Research4::Application.routes.draw do
     match '/signup/student',  :to => 'users#new0', :as => 'signup0'
     match '/signup/professor', :to => 'users#new1', :as => 'signup1'
     match '/signin/student',  :to => 'sessions#new0', :as => 'signin0'
-    match '/signin/professor',  :to => 'sessions#new1', :as => 'signin1'
+    match '/signin/faculty',  :to => 'sessions#new1', :as => 'signin1'
     match '/signout', :to => 'sessions#destroy', :as => 'signout'
     match '/session/retry/:usertype', :to => 'sessions#create'
     match '/help', :to => 'sessions#new'

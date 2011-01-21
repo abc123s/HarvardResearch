@@ -10,10 +10,12 @@ class UsersController < ApplicationController
       if params[:department].present?
         @users = []
         User.with_department(params[:department]).each { |user| @users.push( user ) }
+        @title = 'Faculty'
       else
         @users = User.with_type(1)
       end
     elsif User.find(remember_token[0]).usertype == 1
+      @title = 'Students'
       if params[:concentration].present?
         @users = []
         User.with_concentration(params[:concentration]).each { |user| @users.push( user ) }
@@ -22,6 +24,7 @@ class UsersController < ApplicationController
       end
     else
       @users = User.all
+      @title = 'All Users'
     end
 
     @departments = Set.new

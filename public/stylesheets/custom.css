@@ -2,6 +2,10 @@
 
 /* Links */
 
+h1 {
+  font-family: 'Cabin'; 
+}
+
 a {
   color: #09c;
   text-decoration: none;
@@ -175,6 +179,20 @@ div#left
   float: left;
 }
 
+div#leftin, div#rightin
+{
+  border-style: solid;
+  border-color: #e0e0e0;
+  border-width: 1px;
+
+  margin: 20px;
+  padding: 15px;
+  margin-left: 0px;
+
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
 div#right
 {
   width: 400px;
@@ -186,4 +204,9 @@ div#bottom
   clear: both;
 }
 
+div#edit
+{
+  text-align: right;
+  margin-right: 10px;
+}
 

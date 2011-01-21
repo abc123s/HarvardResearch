@@ -1,11 +1,12 @@
 <div id='left'>
   <h1> Your Profile </h1>
+  <div id='leftin'>
     <p>
-      <b>First name:</b>
+      <b>First Name:</b>
       <%= @user.firstname %>
     </p>
     <p>
-      <b>Last name:</b>
+      <b>Last Name:</b>
       <%= @user.lastname %>
     </p>
     <p>
@@ -57,12 +58,16 @@
         </p>
     <% end %>
     <% if remember_token[0] == @user.id %>
-      <%= link_to 'Edit', edit_user_path(@user) %>
+      <div id='edit'>
+        <%= link_to 'Edit', edit_user_path(@user) %>
+      </div>
    <%end%>
+  </div>
   </div>
 <div id='right'>
   <% if @user.usertype == 0 %>
     <h1>Your Applications</h1>
+    <div id='rightin'>
     <table>
       <tr>
         <th>Job Title</th>
@@ -81,6 +86,7 @@
     <% end %>
   <% elsif @user.usertype == 1 %>
     <h1>Your Jobs</h1>
+    <div id='rightin'>
     <table>
       <tr>
         <th>Title</th>
@@ -99,6 +105,7 @@
     <% end %>
     </table>
   </div>
+</div>
 <% else %>
     <%= link_to 'Job Listings', jobs_path %> |
     <%= link_to 'Professor List', users_path %> |

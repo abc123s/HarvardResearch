@@ -5,6 +5,7 @@ class JobsController < ApplicationController
   # lists all jobs
   def index  
     @jobs = []
+    @title = 'Jobs'
     if params[:department].present?
       User.with_department(params[:department]).each { |user| user.jobs.each { |job| @jobs.push( job ) } }
     else
@@ -28,7 +29,7 @@ class JobsController < ApplicationController
   # show a particular job listing. 
   def show
     @job = Job.find(params[:id])
-    
+    @title = Job.find(params[:id]).title
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @job }
@@ -38,6 +39,7 @@ class JobsController < ApplicationController
   # create a new job listing, only if you are a professor.
   def new
     @job = Job.new
+    @title = 'New Job'
     if User.find(remember_token[0]).usertype != 1
       redirect_to(user_profile_path(remember_token[0]))
     else
@@ -51,6 +53,7 @@ class JobsController < ApplicationController
   # edit a job listing, but only if you are the user who created the listing
   def edit
     @job = Job.find(params[:id])
+    @title = Job.find(params[:id]).title
     if remember_token[0] != @job.user_id
       redirect_to(user_profile_path(remember_token[0]))
     end
@@ -82,6 +85,7 @@ end
     if remember_token[0] != @job.user_id
       redirect_to(user_profile_path(remember_token[0]))
     end
+    @title = 'Edit Job'
     respond_to do |format|
       if @job.update_attributes(params[:job])
         format.html { redirect_to(@job, :notice => 'Job was successfully updated.') }
@@ -100,7 +104,7 @@ end
       redirect_to(user_profile_path(remember_token[0]))
     else
       @job.destroy
-
+      @title = 'Delete Job'
       respond_to do |format|
         format.html { redirect_to(jobs_url) }
         format.xml  { head :ok }
