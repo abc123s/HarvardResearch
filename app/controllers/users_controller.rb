@@ -120,7 +120,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     respond_to do |format|
         if @user.code.to_s == params[:code]
-          @user.update_attributes(:verified => 1)
+          @user.verified = 1
+          @user.save
           sign_in @user
           flash[:success] = "Welcome to Harvard Research!"
           format.html { redirect_to(user_profile_path(@user.id.to_s), :notice => 'User was successfully created.') }

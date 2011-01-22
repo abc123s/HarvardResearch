@@ -36,22 +36,18 @@ class SessionsController < ApplicationController
       end
     # Sign the user in and redirect to the user's homepage/profile
     else
-      if user.verified == '1'
+      if user.verified == 1
         sign_in user
         redirect_to user_profile_path(user.id.to_s)
       else
         if params[:usertype] == '0'
-<<<<<<< HEAD
-          redirect_to(signin0_path) 
-=======
           @title = "Student Login"
           flash.now[:error] = "You have not been verified."
           render 'new0'
->>>>>>> c98bb5747744b977e52b4d4aa1f5fdec643efeae
         else
           @title = "Faculty Login"
           flash.now[:error] = "You have not been verified."
-          redirect_to(signin1_path) 
+          render 'new1'
         end
       end
     end
