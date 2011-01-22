@@ -61,6 +61,7 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] rest-client (v1.6.1, C:/Ruby192/lib/ruby/gems/1.9.1/gems/rest-client-1.6.1)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] sinatra (v1.0, C:/Ruby192/lib/ruby/gems/1.9.1/gems/sinatra-1.0)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] json (v1.4.6, C:/Ruby192/lib/ruby/gems/1.9.1/gems/json-1.4.6-x86-mingw32)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] backports (v1.18.2, C:/Ruby192/lib/ruby/gems/1.9.1/gems/backports-1.18.2)" level="application" />
   </component>
 </module>
 
