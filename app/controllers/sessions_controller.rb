@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
     if user.nil?
       flash.now[:error] = "Invalid email/password combination."
       @title = "Sign in"
-      if params[:type] == '0' 
+      if params[:usertype] == '0' 
         render 'new0'
       else
         render 'new1'
@@ -40,7 +40,7 @@ class SessionsController < ApplicationController
         sign_in user
         redirect_to user_profile_path(user.id.to_s)
       else
-        if params[:type] == '0'
+        if params[:usertype] == '0'
           redirect_to(signin0_path) 
         else
           redirect_to(signin1_path) 
