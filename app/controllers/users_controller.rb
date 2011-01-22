@@ -91,6 +91,7 @@ class UsersController < ApplicationController
   # create new user dependent on status as student or professor
   def create
     @user = User.new(params[:user])
+    @user.code = Random.new.rand(100000000000000..999999999999999)
     respond_to do |format|
       if @user.save
         Notifications.signup(@user).deliver
@@ -113,13 +114,21 @@ class UsersController < ApplicationController
 
   # welcome user to new profile
   def welcome
-    @user = User.find()
+    @user = User.find(params[:id])
     respond_to do |format|
-        if @user.id == 0 # fill in
+        if @user.code.to_s == params[:code]
+          @user.update_attributes(:verified => 1)
           sign_in @user
           flash[:success] = "Welcome to Harvard Research!"
           format.html { redirect_to(user_profile_path(@user.id.to_s), :notice => 'User was successfully created.') }
           format.xml { render :xml => @user, :status => :created, :location => @student }
+        else
+          if @user.usertype == 0
+            format.html { redirect_to(signin0_path, :notice => 'Registration failed.  Please wait 24 h to re-register.')}
+          else
+            format.html { redirect_to(signin1_path, :notice => 'Registration failed.  Please wait 24 h to re-register.')}
+          end
+        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
         end
     end
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110121211917) do
+ActiveRecord::Schema.define(:version => 20110122190420) do
 
   create_table "jobs", :force => true do |t|
     t.integer   "user_id"
@@ -33,29 +33,7 @@ ActiveRecord::Schema.define(:version => 20110121211917) do
     t.timestamp "updated_at"
   end
 
-  create_table "users", :force => true do |t|
-    t.string    "firstname"
-    t.string    "lastname"
-    t.string    "encrypted"
-    t.string    "salt"
-    t.string    "email"
-    t.string    "phone"
-    t.integer   "year"
-    t.string    "concentration"
-    t.string    "secondary"
-    t.float     "gpa"
-    t.text      "resume"
-    t.integer   "privacy"
-    t.text      "interests"
-    t.string    "title"
-    t.string    "location"
-    t.string    "department"
-    t.integer   "usertype"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.integer   "verified"
-  end
-
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'bignum' for column 'code'
 
 end
