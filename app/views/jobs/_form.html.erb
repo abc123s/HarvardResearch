@@ -10,29 +10,35 @@
       </ul>
     </div>
   <% end %>
+  <div style='float: left; width: 400px;'>
   <div class="field">
     <%= f.label :title %> <br />
     <%= f.text_field :title %>
   </div> 
   <div class="field">
-    <%= f.label :funding %><br />
-    <%= f.text_field :funding %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.label :position %><br />
+    <%= f.text_field :position %>
   </div>
   <div class="field">
     <%= f.label :duration %><br />
     <%= f.text_field :duration %>
   </div>
+  </div>
+  <div style='float: right; width: 400px;'>
   <div class="field">
-    <%= f.label :position %><br />
-    <%= f.text_field :position %>
+    <%= f.label :funding %><br />
+    <%= f.text_field :funding %>
   </div>
   <div class="field">
     <%= f.label :location %><br />
     <%= f.text_field :location %>
+  </div>
+  </div>
+  <div style="clear: both">
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
   </div>
   <div class="actions">
     <%= f.submit %>

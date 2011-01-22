@@ -184,6 +184,8 @@ div#leftin, div#rightin
   border-style: solid;
   border-color: #e0e0e0;
   border-width: 1px;
+  
+  height: 350px;  
 
   margin: 20px;
   padding: 15px;
@@ -192,15 +194,21 @@ div#leftin, div#rightin
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
+
+  z-index: 1;
+
+  overflow: auto;
 }
 div#right
 {
   width: 400px;
   float: right;
+  z-index: 1;
 }
 
 div#bottom
 {
+  float: left;
   clear: both;
 }
 
@@ -210,3 +218,14 @@ div#edit
   margin-right: 10px;
 }
 
+div#footer
+{
+  background-image:url('/images/footer.jpg');
+  width: 300px;
+  height: 150px;
+
+  position: relative;
+  top: 350px;
+  left: 550px;
+  z-index: -10;
+}

@@ -63,7 +63,7 @@
       </div>
    <%end%>
   </div>
-  </div>
+</div>
 <div id='right'>
   <% if @user.usertype == 0 %>
     <h1>Your Applications</h1>
@@ -84,6 +84,9 @@
         <td><%= link_to 'Destroy', submission, :confirm => 'Are you sure?', :method => :delete %></td>
       </tr>
     <% end %>
+    </table>
+  </div>
+</div>
   <% elsif @user.usertype == 1 %>
     <h1>Your Jobs</h1>
     <div id='rightin'>

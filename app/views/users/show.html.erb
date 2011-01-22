@@ -1,4 +1,10 @@
 <div id="left">
+  <%if @user.usertype == 1%>
+  <h1> Faculty Info </h1>
+  <%else%>
+  <h1> Student Info </h1>
+  <%end%>
+    <div id='leftin'>
     <p>
       <b>First name:</b>
       <%= @user.firstname %>
@@ -55,11 +61,12 @@
           <%= @user.department %>
         </p>
     <% end %>
+  </div>
 </div>
-
 <div id="right">
   <% if @user.usertype == 1 %>
   <h1>Jobs</h1>
+  <div id='rightin'>
   <table>
   <tr>
     <th>Title</th>
@@ -72,12 +79,13 @@
     <td><%= job.description %></td>
     <td><%= link_to 'Show', job %></td>
   </tr>
+  <% end %>
   </table>
-  <% end %>
+  </div>
   <% end %>
 </div>
+<%if remember_token[0] == @user.id %>
 <div id="bottom">
-<% if remember_token[0] == @user.id %>
   <%= link_to 'Edit', edit_user_path(@user) %> 
-<% end %>
 </div>
+<%end%>

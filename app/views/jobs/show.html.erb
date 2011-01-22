@@ -1,5 +1,6 @@
-<div style='float: left;'>
+<div id='left'>
 <h1> Job Description </h1>
+<div id='leftin'>
 <p>
   <b>Title:</b>
   <%= @job.title %>
@@ -30,13 +31,15 @@
   <%= @job.location %>
 </p>
 </div>
+</div>
 <% if User.find(remember_token[0]).usertype == 0%>
   <div style="clear:both">
   <%= button_to 'Apply', new_submission_path + "/" + @job.id.to_s %>
   </div>
 <% else %>
-  <div style ='float: right;'> 
+  <div style ='right'> 
   <h1>Applications To This Job</h1>
+  <div style='rightin'>
   <table>
     <tr>
       <th>Applicant Name</th>
@@ -51,6 +54,7 @@
   <% end %>
   </table>
   </div>
+</div>
   <% if remember_token[0] == @job.user.id %>
     <div style="clear:both">
       <%= link_to 'Edit', edit_job_path(@job) %>
