@@ -18,15 +18,7 @@
       <%= submit_tag("Filter") %>
     <% end %>
 <% end %>
-<%if User.find(remember_token[0]).usertype == 1 %>
-  <%columns = [{:type => 'html', :class => "first"}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html', :class => "last"}] %>
-<%elsif User.find(remember_token[0]).usertype == 0 %>
-  <%columns = [{:type => 'html', :class => "first"}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html', :class => "last"}] %>
-<%else%> 
-  <%columns = [{:type => 'html', :class => "first"}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html', :class => "last"}] %>
-<%end%>
-<%= raw(datatable(columns, {:sort_by => "[0, 'desc']", :processing => image_tag("spinner.gif") })) %>
-<table class='datatable'>
+<table>
   <thead>
   <tr>
     <th>First name</th>
