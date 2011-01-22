@@ -16,6 +16,7 @@ Research4::Application.routes.draw do
     match '/signout', :to => 'sessions#destroy', :as => 'signout'
     match '/session/retry/:usertype', :to => 'sessions#create'
     match '/help', :to => 'sessions#new'
+    match '/welcome/:id/:code', :to => 'users#welcome'
   root :to => 'sessions#new'
 
   # The priority is based upon order of creation:
