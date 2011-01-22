@@ -63,6 +63,7 @@ class UsersController < ApplicationController
   # create a new student
   def new0
     @user = User.new
+    @user.verified = 0
     @user.usertype = 0
     @title = "Sign Up"
     respond_to do |format|
@@ -75,6 +76,7 @@ class UsersController < ApplicationController
   def new1
     @user = User.new
     @user.usertype = 1
+    @user.verified = 0
     @title = "Sign Up"
     respond_to do |format|
       format.html # new.html.erb

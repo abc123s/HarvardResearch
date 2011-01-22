@@ -30,6 +30,7 @@ div#middle
 
 a div#students
 {
+  font-family: 'Cabin';
   margin-top: 75px;
   margin-left: 125px;
   text-align: center;
@@ -68,6 +69,7 @@ a div#students
 
 a div#professors
 {
+  font-family: 'Cabin';
   margin-top: 75px;
   margin-right: 125px;
   text-align: center;
