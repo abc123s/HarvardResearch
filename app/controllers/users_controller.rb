@@ -94,6 +94,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     @user.code = Random.new.rand(100000000000000..999999999999999)
+    @user.verified = 0
     respond_to do |format|
       if @user.save
         Notifications.signup(@user).deliver
