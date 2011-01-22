@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
     if user.nil?
       flash.now[:error] = "Invalid email/password combination."
       @title = "Sign in"
-      if params[:usertype] == '0'
+      if params[:usertype] == '0' 
         render 'new0'
       else
         render 'new1'
@@ -41,9 +41,13 @@ class SessionsController < ApplicationController
         redirect_to user_profile_path(user.id.to_s)
       else
         if params[:usertype] == '0'
+<<<<<<< HEAD
+          redirect_to(signin0_path) 
+=======
           @title = "Student Login"
           flash.now[:error] = "You have not been verified."
           render 'new0'
+>>>>>>> c98bb5747744b977e52b4d4aa1f5fdec643efeae
         else
           @title = "Faculty Login"
           flash.now[:error] = "You have not been verified."
