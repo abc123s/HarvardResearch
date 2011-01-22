@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # Make sure user is logged in
   before_filter :authenticate, :only => [:index, :show, :edit, :update, :destroy, :profile]
   before_filter :correct_user, :only => [:update, :destroy, :edit]
-
+  
   # show all users
   def index
     if User.find(remember_token[0]).usertype == 0
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       @users = User.all
       @title = 'All Users'
     end
-
+    
     @departments = Set.new
     User.all.each { |user|
       if user.department?

@@ -1,4 +1,8 @@
-<h1>Listing users</h1>
+<% if User.find(remember_token[0]).usertype != 0 %>
+<h1>Students</h1>
+<% elsif User.find(remember_token[0]).usertype != 1%>
+<h1>Faculty</h1>
+<%end%>
 <% if User.find(remember_token[0]).usertype == 0 %>
     <h2>Filter By </h2>
     <%= form_tag({:controller => "users", :action => "index"}, :method => "get") do %>
@@ -14,8 +18,8 @@
       <%= submit_tag("Filter") %>
     <% end %>
 <% end %>
-
 <table>
+  <thead>
   <tr>
     <th>First name</th>
     <th>Last name</th>
@@ -38,7 +42,8 @@
     <th></th>
     <th></th>
   </tr>
-
+  </thead>
+<tbody>
 <% @users.each do |user| %>
   <tr>
     <td><%= user.firstname %></td>
@@ -62,10 +67,11 @@
     <td><%= link_to 'Show', user %></td>
     <% if remember_token[0] == user.id || User.find(remember_token[0]).usertype == 2 %>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+        <td><%= link_to 'Delete', user, :confirm => 'Are you sure?', :method => :delete %></td>
     <% end %>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />

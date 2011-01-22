@@ -16,6 +16,7 @@ class SubmissionsController < ApplicationController
   # shows a specific submission
   def show
     @submission = Submission.find(params[:id])
+    @title = 'Application'
     if (remember_token[0] != @submission.user_id) && (User.find(remember_token[0]).usertype != 1) 
       redirect_to(user_profile_path(remember_token[0]))
     else
@@ -27,7 +28,8 @@ class SubmissionsController < ApplicationController
   end
 
   # makes new submission
-  def new
+  def new 
+    @title = 'Apply'
     @submission = Submission.new
     @submission.job_id = params[:jobid]
     respond_to do |format|
@@ -61,6 +63,7 @@ class SubmissionsController < ApplicationController
 
   # update a submission (via edit)
   def update
+    @title = 'Edit Application'
     @submission = Submission.find(params[:id])
     if remember_token[0] != @submission.user_id
       redirect_to(user_profile_path(remember_token[0]))
@@ -78,6 +81,7 @@ class SubmissionsController < ApplicationController
 
   # delete a submission
   def destroy
+    @title = 'Delete Application'
     @submission = Submission.find(params[:id])
     if remember_token[0] != @submission.user_id
       redirect_to(user_profile_path(remember_token[0]))

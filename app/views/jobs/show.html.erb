@@ -30,16 +30,22 @@
   <b>Location:</b>
   <%= @job.location %>
 </p>
-</div>
-</div>
-<% if User.find(remember_token[0]).usertype == 0%>
-  <div style="clear:both">
-  <%= button_to 'Apply', new_submission_path + "/" + @job.id.to_s %>
+  <% if remember_token[0] == @job.user.id %>
+    <div id="edit">
+      <%= link_to 'Edit', edit_job_path(@job) %>
+    </div>
+  <%elsif User.find(remember_token[0]).usertype == 0%>
+  <div id='edit'>
+    <%= button_to 'Apply', new_submission_path + "/" + @job.id.to_s %>
   </div>
-<% else %>
-  <div style ='right'> 
+  <%end%>
+</div>
+</div>
+
+<% if User.find(remember_token[0]).usertype == 1%>
+  <div id='right'> 
   <h1>Applications To This Job</h1>
-  <div style='rightin'>
+  <div id='rightin'>
   <table>
     <tr>
       <th>Applicant Name</th>
@@ -54,10 +60,5 @@
   <% end %>
   </table>
   </div>
-</div>
-  <% if remember_token[0] == @job.user.id %>
-    <div style="clear:both">
-      <%= link_to 'Edit', edit_job_path(@job) %>
-    </div>
-  <%end%>
+  </div>
 <% end %>
