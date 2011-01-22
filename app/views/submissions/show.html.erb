@@ -1,5 +1,9 @@
 <% if User.find(remember_token[0]).usertype == 1%>
-<div style = 'float: right;'> 
+<div id='right'>
+<div id='rightin'>
+<%else%>
+<div id='left'>
+<div id='leftin'> 
 <%end%>
 <p>
   <b>Job Title:</b>
@@ -10,12 +14,17 @@
   <b>Cover letter:</b>
   <%= @submission.coverletter %>
 </p>
-<% if User.find(remember_token[0]).usertype == 1%>
+<% if User.find(remember_token[0]).usertype == 0%>
+  <div id='edit'>
+    <%= link_to 'Edit', edit_submission_path(@submission) %> 
+  </div>
+<% end %>
 </div>
-<%end%>
-<div style = 'float: left;'>
+</div>
 <% if User.find(remember_token[0]).usertype == 1%>
-  <h1>Student Profile</h1>
+<div id='left'>  
+<h1>Student Profile</h1>
+<div id='leftin'>
 <p>
   <b>Firstname:</b>
   <%= @submission.user.firstname %>
@@ -62,6 +71,4 @@
 </p>
 <% end %>
 </div>
-<% if User.find(remember_token[0]).usertype == 0%>
-<%= link_to 'Edit', edit_submission_path(@submission) %> 
-<% end %>
+</div>

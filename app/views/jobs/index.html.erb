@@ -1,4 +1,4 @@
-<h1>Listing jobs</h1>
+<h1>Jobs</h1>
 <h2>Filter By </h2> 
 <%= form_tag({:controller => "jobs", :action => "index"}, :method => "get") do %>
   <%= label_tag(:department, "Department")%>
@@ -30,7 +30,7 @@
     <td><%= link_to 'Show', job %></td>   
     <% if User.find(remember_token[0]).usertype == 1%>
     <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Delete', job, :confirm => 'Are you sure?', :method => :delete %></td>
     <% end %> 
    </tr> 
 <% end %>
