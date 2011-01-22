@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     if signed_in?
       redirect_to user_profile_path(remember_token[0])
     else
-      @title = 'Professor Login'
+      @title = 'Faculty Login'
     end
   end
   
@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
     if user.nil?
       flash.now[:error] = "Invalid email/password combination."
       @title = "Sign in"
-      if params[:type] == '0' 
+      if params[:usertype] == '0'
         render 'new0'
       else
         render 'new1'
@@ -40,9 +40,13 @@ class SessionsController < ApplicationController
         sign_in user
         redirect_to user_profile_path(user.id.to_s)
       else
-        if params[:type] == '0'
-          redirect_to(signin0_path) 
+        if params[:usertype] == '0'
+          @title = "Student Login"
+          flash.now[:error] = "You have not been verified."
+          render 'new0'
         else
+          @title = "Faculty Login"
+          flash.now[:error] = "You have not been verified."
           redirect_to(signin1_path) 
         end
       end
