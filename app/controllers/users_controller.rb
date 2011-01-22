@@ -95,10 +95,12 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     respond_to do |format|
       if @user.save
-        sign_in @user #sign-in upon sign-up
-        flash[:success] = "Welcome to Harvard Research!"
-        format.html { redirect_to(user_profile_path(@user.id.to_s), :notice => 'User was successfully created.') }
-        format.xml { render :xml => @user, :status => :created, :location => @student }
+        Notifications.signup(@user).deliver
+        if @user.usertype == 0
+          format.html { redirect_to(signin0_path, :notice => "Mail sent.  Check your email to confirm your registration.")}
+        else @user.usertype == 1
+          format.html { redirect_to(signin1_path, :notice => "Mail sent.  Check your email to confirm your registration.")}
+        end
       else 
         @title = "Sign Up"
         if @user.usertype == 0
@@ -108,6 +110,19 @@ class UsersController < ApplicationController
         end
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
+    end
+  end
+
+  # welcome user to new profile
+  def welcome
+    @user = User.find()
+    respond_to do |format|
+        if @user.id == 0 # fill in
+          sign_in @user
+          flash[:success] = "Welcome to Harvard Research!"
+          format.html { redirect_to(user_profile_path(@user.id.to_s), :notice => 'User was successfully created.') }
+          format.xml { render :xml => @user, :status => :created, :location => @student }
+        end
     end
   end
 
