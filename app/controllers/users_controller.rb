@@ -52,12 +52,16 @@ class UsersController < ApplicationController
 
   # show a specific user
   def show
+  if params[:id] == remember_token[0]
+    redirect_to(user_profile_path(remember_token[0]))
+  else  
     @user = User.find(params[:id])
     @title = @user.firstname
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user }
     end
+  end
   end
 
   # create a new student

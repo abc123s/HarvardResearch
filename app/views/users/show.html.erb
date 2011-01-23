@@ -61,6 +61,11 @@
           <%= @user.department %>
         </p>
     <% end %>
+<%if remember_token[0] == @user.id %>
+<div id="edit">
+  <%= link_to 'Edit', edit_user_path(@user) %> 
+</div>
+<%end%>
   </div>
 </div>
 <div id="right">
@@ -84,8 +89,4 @@
   </div>
   <% end %>
 </div>
-<%if remember_token[0] == @user.id %>
-<div id="bottom">
-  <%= link_to 'Edit', edit_user_path(@user) %> 
-</div>
-<%end%>
+
