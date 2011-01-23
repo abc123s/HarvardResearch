@@ -9,10 +9,13 @@ class JobsController < ApplicationController
     @jobs = []
     @title = 'Jobs'
     if params[:department].present?
-      User.with_department(params[:department]).each { |user| user.jobs.each { |job| @jobs.push( job ) } }
-# searchinterests(params[:search]).order(sort_column + ' ' + sort_direction). paginate(:per_page => 5, :page => params[:page])
+      Job.searchdescription(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page]).each { |job| 
+        if job.user.department == params[:department]
+          @jobs.push( job )
+        end
+        }
     else
-      @jobs = Job.all #how to search the interests of professor who posted job?
+      @jobs = Job.searchdescription(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
     end
     @departments = Set.new
     User.all.each { |user|
