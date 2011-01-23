@@ -47,7 +47,7 @@ class SessionsController < ApplicationController
         else
           @title = "Faculty Login"
           flash.now[:error] = "You have not been verified."
-          render 'new1
+          render 'new1'
         end
       end
     end
