@@ -94,6 +94,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     @user.code = Random.new.rand(100000000000000..999999999999999)
+    @user.verified = 0
     respond_to do |format|
       if @user.save
         Notifications.signup(@user).deliver
@@ -119,7 +120,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     respond_to do |format|
         if @user.code.to_s == params[:code]
-          @user.update_attributes(:verified => 1)
+          @user.verified = 1
+          @user.save
           sign_in @user
           flash[:success] = "Welcome to Harvard Research!"
           format.html { redirect_to(user_profile_path(@user.id.to_s), :notice => 'User was successfully created.') }
