@@ -13,6 +13,7 @@ class JobsController < ApplicationController
       if job.user.department == params[:department]
         @jobs.push( job )
       end
+    }
     else
       @jobs = Job.searchdescription(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
     end
