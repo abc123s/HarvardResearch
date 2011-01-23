@@ -4,46 +4,53 @@
 <h1>Faculty</h1>
 <%end%>
 <% if User.find(remember_token[0]).usertype == 0 %>
-    <h2>Filter By </h2>
     <%= form_tag({:controller => "users", :action => "index"}, :method => "get") do %>
       <%= label_tag(:department, "Department")%>
       <%= select_tag "department", options_for_select(@departments) %>
       <%= submit_tag("Filter") %>
-    <% end %>
+  <% end %>
 <% elsif User.find(remember_token[0]).usertype == 1 %>
-    <h2>Filter By </h2>
     <%= form_tag({:controller => "users", :action => "index"}, :method => "get") do %>
       <%= label_tag(:concentration, "Concentration")%>
       <%= select_tag "concentration", options_for_select(@concentrations) %>
       <%= submit_tag("Filter") %>
     <% end %>
 <% end %>
-<table>
-  <thead>
+<%= form_tag users_path, :method => 'get' do %>
+  <%= hidden_field_tag :direction, params[:direction] %>
+  <%= hidden_field_tag :sort, params[:sort] %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <% if User.find(remember_token[0]).usertype == 0 %>	
+        <%= submit_tag "Search Interests", :name => nil %>
+      <% else %>
+        <%= submit_tag "Search Resumes", :name => nil %>	
+      <% end %>  	
+    </p>
+<% end %>
+<table class="pretty">
   <tr>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Email</th>
-    <th>Phone</th>
+    <th><%= sortable "firstname", "First Name" %></th>
+    <th><%= sortable "lastname", "Last Name" %></th>
+    <th><%= sortable "email" %></th>
+    <th><%= sortable "phone" %></th>
     <% if User.find(remember_token[0]).usertype != 0 %>
-        <th>Year</th>
-        <th>Concentration</th>
-        <th>Secondary</th>
-        <th>GPA</th>
+        <th><%= sortable "year" %></th>
+        <th><%= sortable "concentration" %></th>
+        <th><%= sortable "secondary" %></th>
+        <th><%= sortable "gpa", "GPA" %></th>
         <th>Resume</th>
     <% end %>
     <% if User.find(remember_token[0]).usertype != 1 %>
         <th>Interests</th>
         <th>Title</th>
-        <th>Location</th>
-        <th>Department</th>
+        <th><%= sortable "location" %></th>
+        <th><%= sortable "department" %></th>
     <% end %>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-  </thead>
-<tbody>
 <% @users.each do |user| %>
   <tr>
     <td><%= user.firstname %></td>
@@ -71,9 +78,5 @@
     <% end %>
   </tr>
 <% end %>
-</tbody>
 </table>
-
-<br />
-
-<%= link_to 'New User', new_user_path %>
+<%= will_paginate @users %>

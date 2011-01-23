@@ -3,27 +3,27 @@ class UsersController < ApplicationController
   # Make sure user is logged in
   before_filter :authenticate, :only => [:index, :show, :edit, :update, :destroy, :profile]
   before_filter :correct_user, :only => [:update, :destroy, :edit]
+
+  helper_method :sort_column, :sort_direction	
   
   # show all users
   def index
     if User.find(remember_token[0]).usertype == 0
+      @title = 'Faculty'
       if params[:department].present?
-        @users = []
-        User.with_department(params[:department]).each { |user| @users.push( user ) }
-        @title = 'Faculty'
+        @users = User.with_department(params[:department]).searchinterests(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
       else
-        @users = User.with_type(1)
+        @users = User.with_type(1).searchinterests(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
       end
     elsif User.find(remember_token[0]).usertype == 1
       @title = 'Students'
       if params[:concentration].present?
-        @users = []
-        User.with_concentration(params[:concentration]).each { |user| @users.push( user ) }
+        @users = User.with_concentration(params[:concentration]).searchresume(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
       else
-        @users = User.with_type(0)
+	@users = User.with_type(0).searchresume(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
       end
     else
-      @users = User.all
+      @users = User.all.searchresume(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
       @title = 'All Users'
     end
     
@@ -43,9 +43,9 @@ class UsersController < ApplicationController
       }
     @concentrations.to_a.sort
 
-
+    # render pages	
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.xml  { render :xml => @users }
     end 
   end
@@ -202,5 +202,14 @@ end
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)
+    end
+
+    #sorting
+    def sort_column
+      User.column_names.include?(params[:sort]) ? params[:sort] : "lastname"
+    end
+    
+    def sort_direction
+      %W[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end

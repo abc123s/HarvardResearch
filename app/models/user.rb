@@ -58,6 +58,25 @@ class User < ActiveRecord::Base
   attr_accessor :password, :old_password
   attr_accessible :firstname, :lastname, :email, :phone, :year, :concentration, :secondary, :gpa, :resume, :location, :interests, :title, :department, :password, :password_confirmation, :usertype, :verified
 
+  # search method for resume
+  def self.searchresume(search)
+    if search
+      where('resume LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+
+  # search method for interests
+  def self.searchinterests(search)
+    if search
+      where('interests LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+
+
     # Regular expression for email format verification
     email_regex = /\A[\w+\-.]+@(fas.harvard.edu|college.harvard.edu)/
 
