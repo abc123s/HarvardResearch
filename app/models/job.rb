@@ -2,9 +2,11 @@ class Job < ActiveRecord::Base
   # Jobs have many applications but belong to a "user" (professor)
   has_many :submissions
   belongs_to :user
+  
+  #named_scope :with_department, lambda {|department| { :conditions => {User.find(:user_id).department => department} } }
 
   # validations for inputs
-  attr_accessible :title, :funding, :position, :location, :duration, :description
+  attr_accessible :title, :funding, :position, :location, :duration, :description, :user_id
   
   # search method for description
   def self.searchdescription(search)
