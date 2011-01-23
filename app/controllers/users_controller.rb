@@ -140,6 +140,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     respond_to do |format|
+    if @user.has_password?(params[:user][:old_password]) 
       if @user.update_attributes(params[:user])
         format.html { redirect_to(user_profile_path(params[:id]), :notice => 'Profile was successfully updated.') }
         format.xml  { head :ok }
@@ -147,8 +148,11 @@ class UsersController < ApplicationController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
+    else
+      format.html { redirect_to(edit_user_path(params[:id]), :notice => 'Old password did not match password in database.') }
     end
   end
+end
 
   # delete a user
   def destroy

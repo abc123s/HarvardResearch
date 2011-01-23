@@ -8,7 +8,7 @@ class Notifications < ActionMailer::Base
   #
   def signup(user)
     @user = user
-    @url = "http://localhost:3000/welcome/" + user.id.to_s + '/' + user.code.to_s
+    @url = "http://www.harvard-research.com/welcome/" + user.id.to_s + '/' + user.code.to_s
     mail(:to => user.email,
          :subject => "HarvardResearch Registration Confirmation")
   end

@@ -49,13 +49,13 @@ class User < ActiveRecord::Base
 
   # change display names of certain variables to "humanized" versions
   HUMANIZED_ATTRIBUTES = { :email => "E-mail address", :firstname => "First name", :lastname => "Last name",
-                           :phone => "Phone number", :gpa => "GPA" }
+                           :phone => "Phone number", :gpa => "GPA", :old_password => "Old Password"}
   def self.human_attribute_name(attr, options={})
     HUMANIZED_ATTRIBUTES[attr.to_sym] || super
   end
 
   # make password a "virtual attribute", also make attributes accessible
-  attr_accessor :password
+  attr_accessor :password, :old_password
   attr_accessible :firstname, :lastname, :email, :phone, :year, :concentration, :secondary, :gpa, :resume, :location, :interests, :title, :department, :password, :password_confirmation, :usertype, :verified
 
     # Regular expression for email format verification
