@@ -72,6 +72,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  actionmailer
   rails (= 3.0.3)
   sqlite3-ruby
   will_paginate (~> 3.0.pre2)
