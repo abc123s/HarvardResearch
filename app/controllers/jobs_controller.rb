@@ -2,14 +2,17 @@ class JobsController < ApplicationController
   #make sure user is logged in
   before_filter :authenticate
 
+  helper_method :sort_column, :sort_direction
+  
   # lists all jobs
   def index  
     @jobs = []
     @title = 'Jobs'
     if params[:department].present?
       User.with_department(params[:department]).each { |user| user.jobs.each { |job| @jobs.push( job ) } }
+# searchinterests(params[:search]).order(sort_column + ' ' + sort_direction). paginate(:per_page => 5, :page => params[:page])
     else
-      @jobs = Job.all
+      @jobs = Job.all #how to search the interests of professor who posted job?
     end
     @departments = Set.new
     User.all.each { |user|
@@ -117,4 +120,13 @@ end
     def authenticate
       deny_access unless signed_in?
     end
+    
+    #sorting
+    def sort_column
+      Job.column_names.include?(params[:sort]) ? params[:sort] : "title"
+    end
+    def sort_direction
+      %W[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
+
 end

@@ -5,6 +5,16 @@ class Job < ActiveRecord::Base
 
   # validations for inputs
   attr_accessible :title, :funding, :position, :location, :duration, :description
+  
+  # search method for description
+  def self.searchdescription(search)
+    if search
+      where('description LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+  
      validates :funding, :length => { :maximum => 200 }
      validates_length_of :position, :maximum => 50
      validates :location, :length => { :maximum => 50 }
