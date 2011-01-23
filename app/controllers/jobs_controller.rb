@@ -8,7 +8,11 @@ class JobsController < ApplicationController
   def index  
     @title = 'Jobs'
     if params[:department].present?
-    @jobs = Job.with_department(params[:department]).searchdescription(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
+    @jobs = []
+    Job.searchdescription(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page]).each { |job|
+      if job.user.department == params[:department]
+        @jobs.push( job )
+      end
     else
       @jobs = Job.searchdescription(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
     end
