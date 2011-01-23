@@ -119,12 +119,11 @@ class UsersController < ApplicationController
   def welcome
     @user = User.find(params[:id])
     respond_to do |format|
-        if @user.code.to_s == params[:code]
-          @user.verified = 1
-          @user.save
+        if @user.code.to_s == params[:code] 
+          @user.update_attribute(:verified, 1)
           sign_in @user
           flash[:success] = "Welcome to Harvard Research!"
-          format.html { redirect_to(user_profile_path(@user.id.to_s), :notice => 'User was successfully created.') }
+          format.html { redirect_to(edit_user_path(@user.id.to_s), :notice => 'User was successfully created. Please confirm your information and password.' ) }
           format.xml { render :xml => @user, :status => :created, :location => @student }
         else
           if @user.usertype == 0

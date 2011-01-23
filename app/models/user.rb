@@ -54,11 +54,9 @@ class User < ActiveRecord::Base
     HUMANIZED_ATTRIBUTES[attr.to_sym] || super
   end
 
-
   # make password a "virtual attribute", also make attributes accessible
   attr_accessor :password
-  attr_accessible :firstname, :lastname, :email, :phone, :year, :concentration, :secondary, :gpa, :resume,
-                  :location, :interests, :title, :department, :password, :password_confirmation, :usertype
+  attr_accessible :firstname, :lastname, :email, :phone, :year, :concentration, :secondary, :gpa, :resume, :location, :interests, :title, :department, :password, :password_confirmation, :usertype, :verified
 
     # Regular expression for email format verification
     email_regex = /\A[\w+\-.]+@(fas.harvard.edu|college.harvard.edu)/
