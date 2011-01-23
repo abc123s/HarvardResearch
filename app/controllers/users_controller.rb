@@ -93,7 +93,7 @@ class UsersController < ApplicationController
   # create new user dependent on status as student or professor
   def create
     @user = User.new(params[:user])
-    @user.code = Random.new.rand(100000000000000..999999999999999)
+    @user.code = 100000000000000+ rand(899999999999999)
     @user.verified = 0
     respond_to do |format|
       if @user.save
