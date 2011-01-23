@@ -237,9 +237,9 @@ div#footer
 }
 
 .pretty th .asc {
-  background-image: url('/images/up_arrow.gif');
+  background-color: #D3D3D3;
 }
 
 .pretty th .desc {
-  background-image: url("/images/down_arrow.gif');
+  background-color: #D3D3D3;
 }
