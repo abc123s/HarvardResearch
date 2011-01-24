@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   # Users can file many submissions and post many jobs (depending on status)
   has_many :submissions
   has_many :jobs
-
+  has_many :favorites
+  
   named_scope :with_department, lambda {|department| where(:department => department) }
   named_scope :with_type, lambda {|type| where(:usertype => type)}
   named_scope :with_concentration, lambda {|concentration| where(:concentration => concentration) }

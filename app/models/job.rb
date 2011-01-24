@@ -1,6 +1,7 @@
 class Job < ActiveRecord::Base
   # Jobs have many applications but belong to a "user" (professor)
   has_many :submissions
+  has_many :favorites
   belongs_to :user
   
   #named_scope :with_department, lambda {|department| { :conditions => {User.find(:user_id).department => department} } }

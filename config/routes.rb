@@ -1,4 +1,6 @@
 Research4::Application.routes.draw do
+  resources :favorites
+
   get "sessions/new"
   get "sessions/create"
   get "sessions/destroy"
