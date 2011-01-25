@@ -1,4 +1,3 @@
-<div id="line"></div>
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -11,17 +10,21 @@
       </ul>
     </div>
   <% end %>
-  <div id="left">
   <div class="field">
     <%= f.hidden_field :usertype %>
   </div>
+  <div id="left">
   <div class="field">
     <%= f.label :firstname, "First Name" %><br />
-    <%= f.text_field :firstname, :size => 30 %>
+    <%= f.text_field :firstname %>
   </div>
   <div class="field">
     <%= f.label :lastname, "Last Name" %><br />
-    <%= f.text_field :lastname, :size => 30 %>
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :old_password, "Old Password" %><br />
+    <%= f.password_field :old_password, :size => 30 %>
   </div>
   <div class="field">
     <%= f.label :password %><br />
@@ -29,39 +32,35 @@
   </div>
   <div class="field">
     <%= f.label :password_confirmation, "Confirm Password" %><br />
-    <%= f.password_field :password_confirmation, :size => 30 %>
+    <%= f.password_field :password_confirmation %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.text_field :email, :size => 30 %>
+    <%= f.text_field :email %>
   </div>
   </div>
   <div id="right">
   <div class="field">
     <%= f.label :phone, "Phone Number" %><br />
-    <%= f.text_field :phone, :size => 30 %>
+    <%= f.text_field :phone %>
   </div>
   <div class="field">
-    <%= f.label :year %><br />
-    <%= f.select :year, User::YEARS, :prompt => "Select a year", :size => 30 %>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :concentration %><br />
-    <%= f.select :concentration, User::CONCENTRATIONS, :prompt => "Select your primary concentration", :size => 30 %>
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :secondary %><br />
-    <%= f.select :secondary, User::SECONDARYS, :prompt => "Select a secondary" , :size => 30 %>
-  </div>
-  <div class="field">
-    <%= f.label :gpa , "GPA" %><br />
-    <%= f.text_field :gpa, :size => 30 %>
+    <%= f.label :department %><br />
+    <%= f.select :department, User::DEPARTMENTS, :prompt => "Select primary affiliation" %>
   </div>
   </div>
   <div id="bottom">
   <div class="field">
-    <%= f.label :resume %><br />
-    <%= f.text_area :resume %>
+    <%= f.label :interests %><br />
+    <%= f.text_area :interests %>
   </div>
   <div class="field">
     <%= f.label :privacy %><br />
