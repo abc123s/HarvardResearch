@@ -94,6 +94,18 @@ class User < ActiveRecord::Base
     validates_numericality_of :phone, :allow_blank => true
     validates :phone, :length       => { :maximum => 15 }
 
+     def password
+      if !self.new_record?  
+        if @password.nil?
+          '123456'
+        else
+          @password
+        end
+      else
+        @password
+      end
+    end
+
     # Student? method to determine if user is a student
     def student?
       :usertype == 0
