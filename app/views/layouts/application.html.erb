@@ -22,6 +22,18 @@
         margin-right: auto;
       }
     </style>
+    <% else %>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $(".pretty tr:odd").addClass("odd");
+          $(".pretty tr:not(.odd)").hide();
+          $(".pretty tr:first-child").show();
+        
+          $(".pretty tr.odd").click(function(){
+              $(this).next("tr").toggle();
+          });
+      });
+    </script>
     <% end %>
 <script type="text/javascript">
 

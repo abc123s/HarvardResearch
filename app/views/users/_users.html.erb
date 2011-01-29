@@ -11,10 +11,8 @@
         <th><%= sortable "concentration" %></th>
         <th><%= sortable "secondary" %></th>
         <th><%= sortable "gpa", "GPA" %></th>
-        <th>Resume</th>
     <% end %>
     <% if User.find(remember_token[0]).usertype != 1 %>
-        <th>Interests</th>
         <th>Title</th>
         <th><%= sortable "location" %></th>
         <th><%= sortable "department" %></th>
@@ -35,10 +33,8 @@
         <td><%= user.concentration %></td>
         <td><%= user.secondary %></td>
         <td><%= user.gpa %></td>
-        <td><%= user.resume %></td>
     <% end %>
     <% if User.find(remember_token[0]).usertype != 1 %>
-        <td><%= user.interests %></td>
         <td><%= user.title %></td>
         <td><%= user.location %></td>
         <td><%= user.department %></td>
@@ -47,6 +43,13 @@
     <% if remember_token[0] == user.id || User.find(remember_token[0]).usertype == 2 %>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Delete', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <% if User.find(remember_token[0]).usertype != 0 %>
+      <td colspan = '7'> <%= user.resume %> </td>
+    <% else %>
+      <td colspan = '8'> <%= user.interests %> </td>
     <% end %>
   </tr>
 <% end %>
