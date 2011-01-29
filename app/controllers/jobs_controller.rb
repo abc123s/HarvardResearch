@@ -26,7 +26,9 @@ class JobsController < ApplicationController
       end
       }
     @departments.to_a.sort
+    
     respond_to do |format|
+      format.js
       format.html # index.html.erb
       format.xml  { render :xml => @jobs }
     end
