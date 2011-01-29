@@ -91,7 +91,11 @@ class UsersController < ApplicationController
 
   # edit profile
   def edit
-    @title = "Edit Profile"
+    if current_user?(@user)
+      @title = "Edit Profile"
+    else
+      redirect_to(edit_user_path(remember_token[0]))
+    end
   end
 
   # create new user dependent on status as student or professor
@@ -140,7 +144,16 @@ class UsersController < ApplicationController
         end
     end
   end
-
+  
+  def changepassword
+    if params[:id] == remember_token[0].to_s
+      @title = "Change Password"
+      @user = User.find(params[:id])
+    else
+      redirect_to(changepassword_user_path(remember_token[0]))
+    end  
+  end
+  
   # help edit profile
   def update
     @user = User.find(params[:id])
@@ -154,7 +167,7 @@ class UsersController < ApplicationController
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     else
-      format.html { redirect_to(edit_user_path(params[:id]), :notice => 'Old password did not match password in database.') }
+      format.html { redirect_to(edit_user_path(params[:id]), :notice => 'Incorrect Password. Update failed.') }
     end
   end
 end

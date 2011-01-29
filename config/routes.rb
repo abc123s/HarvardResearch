@@ -10,6 +10,7 @@ Research4::Application.routes.draw do
   resources :jobs
   resources :users
     match '/profile/:id', :to => 'users#profile', :as => "user_profile"
+    match '/users/:id/changepassword', :to => 'users#changepassword', :as => "changepassword_user"
   resources :sessions, :only => [:new, :create, :destroy]
     match '/signup/student',  :to => 'users#new0', :as => 'signup0'
     match '/signup/professor', :to => 'users#new1', :as => 'signup1'
