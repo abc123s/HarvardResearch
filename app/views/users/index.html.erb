@@ -1,8 +1,9 @@
 <% if User.find(remember_token[0]).usertype != 0 %>
-<h1>Students</h1>
+  <h1>Students</h1>
 <% elsif User.find(remember_token[0]).usertype != 1%>
-<h1>Faculty</h1>
+  <h1>Faculty</h1>
 <%end%>
+
 <% if User.find(remember_token[0]).usertype == 0 %>
     <%= form_tag({:controller => "users", :action => "index"}, :method => "get") do %>
       <%= label_tag(:department, "Department")%>
@@ -16,67 +17,16 @@
       <%= submit_tag("Filter") %>
     <% end %>
 <% end %>
-<%= form_tag users_path, :method => 'get' do %>
-  <%= hidden_field_tag :direction, params[:direction] %>
-  <%= hidden_field_tag :sort, params[:sort] %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <% if User.find(remember_token[0]).usertype == 0 %>	
-        <%= submit_tag "Search Interests", :name => nil %>
-      <% else %>
-        <%= submit_tag "Search Resumes", :name => nil %>	
-      <% end %>  	
-    </p>
-<% end %>
-<table class="pretty">
-  <tr>
-    <th><%= sortable "firstname", "First Name" %></th>
-    <th><%= sortable "lastname", "Last Name" %></th>
-    <th><%= sortable "email" %></th>
-    <th><%= sortable "phone" %></th>
-    <% if User.find(remember_token[0]).usertype != 0 %>
-        <th><%= sortable "year" %></th>
-        <th><%= sortable "concentration" %></th>
-        <th><%= sortable "secondary" %></th>
-        <th><%= sortable "gpa", "GPA" %></th>
-        <th>Resume</th>
-    <% end %>
-    <% if User.find(remember_token[0]).usertype != 1 %>
-        <th>Interests</th>
-        <th>Title</th>
-        <th><%= sortable "location" %></th>
-        <th><%= sortable "department" %></th>
-    <% end %>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.firstname %></td>
-    <td><%= user.lastname %></td>
-    <td><%= user.email %></td>
-    <td><%= user.phone %></td>
 
-    <% if User.find(remember_token[0]).usertype != 0 %>
-        <td><%= user.year %></td>
-        <td><%= user.concentration %></td>
-        <td><%= user.secondary %></td>
-        <td><%= user.gpa %></td>
-        <td><%= user.resume %></td>
-    <% end %>
-    <% if User.find(remember_token[0]).usertype != 1 %>
-        <td><%= user.interests %></td>
-        <td><%= user.title %></td>
-        <td><%= user.location %></td>
-        <td><%= user.department %></td>
-    <% end %>
-    <td><%= link_to 'Show', user %></td>
-    <% if remember_token[0] == user.id || User.find(remember_token[0]).usertype == 2 %>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Delete', user, :confirm => 'Are you sure?', :method => :delete %></td>
-    <% end %>
-  </tr>
+<%= form_tag users_path, :method => 'get', :id => "users_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <% if User.find(remember_token[0]).usertype == 0 %>	
+      <%= submit_tag "Search Interests", :name => nil %>
+    <% else %>
+      <%= submit_tag "Search Resumes", :name => nil %>	
+    <% end %>  	
+  </p>
+  <div id="users"><%= render 'users' %></div>
 <% end %>
-</table>
-<%= will_paginate @users %>
+

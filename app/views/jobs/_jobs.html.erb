@@ -1,0 +1,34 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+
+<table class ="pretty">
+  <tr>
+    <th><%= sortable "position" %></th>
+    <th>Description</th>
+    <th><%= sortable "user.lastname", "Professor" %></th>
+    <th><%= sortable "location" %></th>
+    <th><%= sortable "duration" %></th>
+    <th><%= sortable "user.department", "Department" %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jobs.each do |job| %>
+  <tr>
+    <td><%= job.position %></td>
+    <td><%= job.description %></td>
+    <td><%= job.user.firstname %> <%=job.user.lastname%></td>
+    <td><%= job.location %></td>
+    <td><%= job.duration %></td>
+    <td><%= job.user.department %></td>
+    <td><%= link_to 'Show', job %></td>   
+    <% if User.find(remember_token[0]).usertype == 1%>
+    <td><%= link_to 'Edit', edit_job_path(job) %></td>
+    <td><%= link_to 'Delete', job, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %> 
+   </tr> 
+<% end %>
+</table>
+
+<%= will_paginate @jobs %>

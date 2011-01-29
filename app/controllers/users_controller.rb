@@ -45,6 +45,7 @@ class UsersController < ApplicationController
 
     # render pages	
     respond_to do |format|
+      format.js
       format.html
       format.xml  { render :xml => @users }
     end 
