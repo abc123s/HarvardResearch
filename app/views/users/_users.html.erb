@@ -1,6 +1,6 @@
 <%= hidden_field_tag :direction, params[:direction] %>
 <%= hidden_field_tag :sort, params[:sort] %>
-<table class="pretty">
+<table class="pretty1">
   <tr>
     <th><%= sortable "firstname", "First Name" %></th>
     <th><%= sortable "lastname", "Last Name" %></th>
@@ -13,7 +13,7 @@
         <th><%= sortable "gpa", "GPA" %></th>
     <% end %>
     <% if User.find(remember_token[0]).usertype != 1 %>
-        <th>Title</th>
+        <th><%= sortable "title" %></th>
         <th><%= sortable "location" %></th>
         <th><%= sortable "department" %></th>
     <% end %>
@@ -22,8 +22,8 @@
     <th></th>
   </tr>
 <% @users.each do |user| %>
-  <tr>
-    <td><%= user.firstname %></td>
+  <tr onMouseover="this.style.backgroundColor = '#e5ecf9';" onMouseout="this.style.backgroundColor = 'white';" >
+    <td class="special"><%= user.firstname %></td>
     <td><%= user.lastname %></td>
     <td><%= user.email %></td>
     <td><%= user.phone %></td>
@@ -43,6 +43,9 @@
     <% if remember_token[0] == user.id || User.find(remember_token[0]).usertype == 2 %>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Delete', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% else %>
+       <td></td>
+       <td></td>
     <% end %>
   </tr>
   <tr>

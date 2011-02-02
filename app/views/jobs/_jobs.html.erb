@@ -2,7 +2,7 @@
 <%= hidden_field_tag :sort, params[:sort] %>
 
 <table class ="pretty">
-  <tr>
+  <tr id = "theader">
     <th><%= sortable "position" %></th>
     <th>Description</th>
     <th><%= sortable "user.lastname", "Professor" %></th>

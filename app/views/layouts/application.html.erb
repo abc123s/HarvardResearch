@@ -25,11 +25,11 @@
     <% else %>
     <script type="text/javascript">
       $(document).ready(function(){
-          $(".pretty tr:odd").addClass("odd");
-          $(".pretty tr:not(.odd)").hide();
-          $(".pretty tr:first-child").show();
+          $(".pretty1 tr:odd").addClass("odd");
+          $(".pretty1 tr:not(.odd)").hide();
+          $(".pretty1 tr:first-child").show();
         
-          $(".pretty tr.odd").click(function(){
+          $(".pretty1 tr.odd").click(function(){
               $(this).next("tr").toggle();
           });
       });

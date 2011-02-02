@@ -230,16 +230,29 @@ div#footer
   z-index: -10;
 }
 
-.pretty th .current {
-  padding-right: 12px;
-  background-repeat: no-repeat;
-  background-position: right center;
+.pretty1 {
+  border-spacing: 0px;
 }
 
-.pretty th .asc {
-  background-color: #D3D3D3;
+.pretty1 a {
+  color: #0099CC;
 }
 
-.pretty th .desc {
-  background-color: #D3D3D3;
+.pretty1 tr {
+}
+
+.pretty1 td {
+}
+
+.pretty1 th .current {
+  color: green;
+  border-bottom-width: 10px;
+}
+
+.pretty1 th .asc {
+  background-color: white;
+}
+
+.pretty1 th .desc {
+  background-color: white;
 }
