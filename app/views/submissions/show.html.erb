@@ -9,7 +9,11 @@
 <%end%>
 <p>
   <b>Job Title:</b>
-  <%= @submission.job.title %>
+  <% if @submission.job? %>
+    <%= @submission.job.title %>
+  <% else %>
+    (job deleted)
+  <% end %>
 </p>
 
 <p>

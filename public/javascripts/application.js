@@ -7,6 +7,8 @@ $(function () {
     }
   );
 
+  $('.pretty1 tr:not(.odd)').hide();  
+  
   // Search form
   $('#users_search, #jobs_search').submit(function () {
     $.get(this.action, $(this).serialize(), null, 'script');

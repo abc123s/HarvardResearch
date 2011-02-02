@@ -89,7 +89,7 @@ class SubmissionsController < ApplicationController
       @submission.destroy
 
       respond_to do |format|
-        format.html { redirect_to(submissions_url) }
+        format.html { redirect_to(user_profile_path(remember_token[0])) }
         format.xml  { head :ok }
       end
     end
