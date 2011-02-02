@@ -250,12 +250,12 @@ table {
 
 .pretty1 tbody tr:nth-child(4n+2) td,
 .pretty1 tbody tr:nth-child(4n+3) td {
-  background: #E5ECF9;
+  background-color: #E5ECF9;
 }
 
 .pretty1 tbody tr:nth-child(4n) td,
 .pretty1 tbody tr:nth-child(4n+1) td {
-  background: white;
+  background-color: white;
 }
 
 .pretty1 td {
