@@ -1,1 +1,6 @@
-$('#users').html('<%= escape_javascript(render("users")) %>'); 
+$('#users').html('<%= escape_javascript(render("users")) %>');
+$('.pretty1 tr:not(.odd)').hide();
+$('.pretty1 tr:first-child').show();
+$('.pretty1 tr.odd').click(function(){
+  $(this).next("tr").toggle();
+});

@@ -48,7 +48,7 @@
        <td></td>
     <% end %>
   </tr>
-  <tr onload="this.hide()">
+  <tr>
     <% if User.find(remember_token[0]).usertype != 0 %>
       <td colspan = '9'> <%= user.resume %> </td>
     <% else %>
