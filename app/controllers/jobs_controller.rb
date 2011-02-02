@@ -114,7 +114,7 @@ end
       @job.destroy
       @title = 'Delete Job'
       respond_to do |format|
-        format.html { redirect_to(jobs_url) }
+        format.html { redirect_to(user_profile_path(remember_token[0])) }
         format.xml  { head :ok }
       end
     end

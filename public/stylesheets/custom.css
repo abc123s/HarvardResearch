@@ -125,6 +125,7 @@ div#linkbar {
   margin-top: 58px;
 }
 div#sign{
+  background-color: #B22222;
   position: relative; 
   top: 30px;
     
@@ -230,6 +231,15 @@ div#footer
   z-index: -10;
 }
 
+table tbody tr:nth-child(even) td, 
+table tbody tr.even td {
+  background-color: #E5ECF9;
+}
+
+table {
+  border-spacing: 0px;
+}
+
 .pretty1 {
   border-spacing: 0px;
 }
@@ -238,7 +248,14 @@ div#footer
   color: #0099CC;
 }
 
-.pretty1 tr {
+.pretty1 tbody tr:nth-child(4n+2) td,
+.pretty1 tbody tr:nth-child(4n+3) td {
+  background: #E5ECF9;
+}
+
+.pretty1 tbody tr:nth-child(4n) td,
+.pretty1 tbody tr:nth-child(4n+1) td {
+  background: white;
 }
 
 .pretty1 td {
