@@ -78,7 +78,7 @@
 
     <% @submissions.each do |submission| %>
       <tr>
-        <% if submission.job? %>
+        <% if !submission.job.nil? %>
         <td><%= submission.job.title %></td>
         <% else %>
         <td>(job deleted)
