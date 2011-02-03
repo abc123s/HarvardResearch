@@ -33,7 +33,7 @@ class UsersController < ApplicationController
         @departments.add(user.department)
       end
       }
-    @departments.to_a.sort
+    @departments = @departments.to_a.sort
 
     @concentrations = Set.new
     User.all.each { |user|
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
         @concentrations.add(user.concentration)
       end
       }
-    @concentrations.to_a.sort
+    @concentrations = @concentrations.to_a.sort
 
     # render pages	
     respond_to do |format|
