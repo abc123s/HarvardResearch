@@ -22,7 +22,7 @@
     <th></th>
   </tr>
 <% @users.each do |user| %>
-  <tr onMouseover="this.style.color = 'green';" onMouseout="this.style.color = 'black';" class="odd">
+  <tr onMouseover="this.style.color = '#C41414';" onMouseout="this.style.color = 'black';" class="odd">
     <td class="special"><%= user.firstname %></td>
     <td><%= user.lastname %></td>
     <td><%= user.email %></td>
@@ -50,9 +50,9 @@
   </tr>
   <tr>
     <% if User.find(remember_token[0]).usertype != 0 %>
-      <td colspan = '9'> <%= user.resume %> </td>
+      <td colspan = '11'> <%= user.resume %> </td>
     <% else %>
-      <td colspan = '11'> <%= user.interests %> </td>
+      <td colspan = '10'> <%= user.interests %> </td>
     <% end %>
   </tr>
 <% end %>
